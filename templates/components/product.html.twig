@@ -1,4 +1,4 @@
-{% macro card(name, color, price) %}
+{% macro card(id, name, color, price) %}
 
 <div class="card shadow round">
     <div class="card-image">
@@ -13,7 +13,7 @@
         </div>
     </div>
     <div class="actions ">
-        <a class="blue button">
+        <a href="{{ path('app_article_view', { 'id': id }) }}" class="blue button">
             Voir
         </a>
     </div>

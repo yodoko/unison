@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block style %}
-<link rel="stylesheet" href="../components/criterions.css">
-<link rel="stylesheet" href="../components/form.css">
-<link rel="stylesheet" href="../style/panier.css">
+<link rel="stylesheet" href="{{ asset('components/criterions.css') }}">
+<link rel="stylesheet" href="{{ asset('components/form.css') }}">
+<link rel="stylesheet" href="{{ asset('style/panier.css') }}">
 {% endblock style %}
 
 {% block title %}
@@ -16,7 +16,7 @@
         {% if not authentified %}
         <div class="container0 shadow" id="empty-cart">
             <div class="card-main">
-                <img src="../images/icones-transp/icone-panier.png">
+                <img src="{{ asset('images/icones-transp/icone-panier.png') }}">
                 <p>Votre panier est vide.</p>
                 <p>Connectez-vous pour consulter votre panier et commencer vos dons.</p>
             </div>
@@ -27,15 +27,11 @@
         </div>
         {% else %}
         <div class="container0 shadow" id="shopping-cart">
-            <div>
-                
-            </div>
-            
             <div class="items">
                 <div class="item">
                     <div class="picture">
                         <a>
-                            <img src="https://www.myshirt.com.my/wp-content/uploads/2016/01/76000-Gildan-Premium-Soft-Ring-Spun-T-Shirt-Dark-Chocolate.jpg">
+                            <img src="{{ asset('images/produit' ~ 'Nom du produit' ~ '/' ~ 'noir.jpg') }}">
                         </a>
                     </div>
                     

@@ -30,7 +30,12 @@
         </main>
         {% include 'footer.html.twig' %}
         <script src="{{ asset('js/common.js') }}"></script>
-        <script src="{{ asset('js/error.js') }}"> </script>
+        <script src="{{ asset('js/error.js') }}"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                loadDefaultImg("{{ asset('images/produit/no_image.jpg') }}")
+            })    
+        </script>
         {% block script %}
 
         {% endblock %}

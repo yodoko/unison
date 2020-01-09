@@ -1,0 +1,118 @@
+{% extends 'base.html.twig' %}
+
+{% block style %}
+<link rel="stylesheet" href="../components/criterions.css">
+<link rel="stylesheet" href="../components/form.css">
+<link rel="stylesheet" href="../style/panier.css">
+{% endblock style %}
+
+{% block title %}
+    Votre panier
+{% endblock title %}
+
+{% block content %}
+<div class="page-inner">
+    <div class="centerer">
+        {% if not authentified %}
+        <div class="container0 shadow" id="empty-cart">
+            <div class="card-main">
+                <img src="../images/icones-transp/icone-panier.png">
+                <p>Votre panier est vide.</p>
+                <p>Connectez-vous pour consulter votre panier et commencer vos dons.</p>
+            </div>
+            
+            <div class="option-center">
+                <a class="button blue hover-full">CONNEXION</a>
+            </div>
+        </div>
+        {% else %}
+        <div class="container0 shadow" id="shopping-cart">
+            <div>
+                
+            </div>
+            
+            <div class="items">
+                <div class="item">
+                    <div class="picture">
+                        <a>
+                            <img src="https://www.myshirt.com.my/wp-content/uploads/2016/01/76000-Gildan-Premium-Soft-Ring-Spun-T-Shirt-Dark-Chocolate.jpg">
+                        </a>
+                    </div>
+                    
+                    <div class="details">
+                        <a><h3 class="form-subtitle">T-shirt noir L</h3></a>
+                        
+                        <div class="main form-category">
+                            <div>
+                                <text>Quantité</text>
+                                <input type="number" min="1" max="9" step="1" value="1">
+                            </div>
+                            
+                            <div>
+                                <text>Association 0</text>
+                            </div>
+                            
+                            <div class="price">
+                                <text>35.00 €</text>
+                            </div>
+                        </div>
+                        
+                        <div class="options">
+                            <div>
+                                <var class="availability" value="true"></var>
+                            </div>
+                            
+                            <div class="submit">
+                                <a class="button hover-full blue">Modifier</a>
+                                
+                                <button class="hover-full orange">Supprimer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+            
+            <div class="sum">
+                <p>Sous-total : 35.00 €</p>
+                <p><small>(50 % du prix du produit est reversé à l'association choisie)</small> Argent versé à l'association : 17.50 €</p>
+                <p>Estimation des frais d'expédition : 5.00 €</p>
+            </div>
+            
+            <div class="options">
+                <a class="back">Continuer vos achats</a>
+                <a class="button blue hover-full">Passer la commande</a>
+                <text id="price-total">Total : 40.00 €</text>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}
+
+{% block script %}
+<script>
+
+{
+    const numberInputs = document.querySelectorAll("input[type='number']");
+    
+    for(let i = 0; i < numberInputs.length; ++i) {
+        const numberInput = numberInputs[i];
+        
+        numberInput.addEventListener("change", function(event) {
+            const value = Number(this.value);
+            
+            if(this.min && value < Number(this.min)) {
+                this.value = this.min;
+            }
+            
+            else if(this.max && value > Number(this.max)) {
+                this.value = this.max;
+            }
+        });
+    }
+}
+
+</script>
+{% endblock script %}

@@ -1,0 +1,107 @@
+
+/**/
+
+input:not([type]),
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="email"] {
+    transition: 0.375s;
+    
+    outline: none;
+    
+    border-width: 0.0625em;
+    border-style: solid;
+    border-radius: 0.25em;
+    
+    border-color: lightGray;
+    background-color: #FFFFFF;
+    color: gray;
+}
+
+input:not([type]):hover,
+input[type="text"]:hover,
+input[type="password"]:hover,
+input[type="number"]:hover,
+input[type="email"]:hover {
+    transition: 0.25s;
+    
+    border-color: gray;
+    color: dimGray;
+}
+
+input:not([type]):focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus {
+    transition: 0.125s;
+    
+    border-color: #43B5CD;
+    color: black;
+}
+
+/**/
+
+.criterion {
+    display : flex;
+    
+    justify-content : flex-end;
+    
+    position : relative;
+    
+    margin : 1em 0 2em 0;
+    
+    width : 100%;
+}
+
+.criterion > label {
+    transition: 0.375s;
+    
+    display : flex;
+    align-items : center;
+    justify-content : flex-start;
+    
+    position : absolute;
+    top : -0.625em;
+    left : 1em;
+    
+    padding : 0 0.25em 0.25em 0.25em;
+    border-radius : 0 0 0.375em 0.375em;
+    
+    background-color : white;
+    color: dimGray;
+    
+    text-overflow : ellipsis;
+    max-height : 1em;
+    
+    user-select : none;
+    font-size: 0.8em;
+}
+
+.criterion > input {
+    padding : 0.5em;
+    width : 100%;
+}
+
+.criterion > input[required] + label:after {
+    padding-left: 0.375em;
+    color: red;
+    content: "*";
+}
+
+.criterion > input:hover + label {
+    transition: 0.25s;
+    
+    color: black;
+}
+
+.criterion > input:focus + label {
+    transition: 0.125s;
+    
+    color: #2395AD;
+}
+
+.criterion > input.notice {
+    border-color: red;
+}

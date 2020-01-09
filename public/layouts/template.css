@@ -1,0 +1,265 @@
+
+@font-face {
+    font-family: GoodDog;
+    font-style: normal;
+    font-weight: 400;
+    src: local('Good Dog Regular'), local('GoodDog-Regular'), url(../fonts/GOODDC__.TTF);
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    src: local('Robot Regular'), local('Roboto-Regular'), url(../fonts/Roboto-Regular.ttf);
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+* {
+    font-family: Roboto, Sans-serif;
+}
+
+/* normalize */
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+html, body, ul, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* basic common header and footer rules */
+
+nav ul {
+    display: flex;
+    align-items: center;
+    
+    height: 100%;
+}
+
+.upper-header, .lower-footer {
+    display: flex;
+    align-items: center;
+}
+
+header, footer {
+    display: flex;
+    flex-direction: column;
+    height: 16.5%;
+    
+    position: relative;
+    z-index: 10;
+}
+
+header {
+    height: 96px;
+}
+
+footer {
+    height: 112px;
+}
+
+header > *, footer > * {
+    height: 50%;
+}
+
+.upper-header, .lower-footer {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.upper-header {
+    flex-grow: 1;
+}
+
+header > nav {
+    height: 48px;
+}
+
+.upper-footer {
+    height: 48px;
+}
+
+.lower-footer {
+    flex-grow: 1;
+}
+
+/* header and inner header layout */
+
+.upper-header {
+    color: white;
+    justify-content: space-between;
+}
+
+nav ul {
+    justify-content: space-around;
+}
+
+/* main content */
+
+main {
+    /min-height: 67%;
+    /background-color: red;
+    min-height: calc(100% - 96px - 112px);
+    /overflow: auto;
+}
+
+/* footer and footer inner layout */
+
+.upper-footer ul {
+    justify-content: space-between;
+}
+
+.upper-footer ul {
+    display: flex;
+    height: 100%;
+}
+
+.upper-footer ul li {
+    flex-grow: 1;
+    
+    border: 1px solid lightGray;
+}
+
+ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 100%;
+    height: 100%;
+}
+
+.lower-footer, .social {
+    justify-content: space-between;
+}
+
+.social {
+    width: 25%;
+    display: flex;
+}
+
+/* colors */
+
+.upper-header, .blue {
+    background-color: #43b5cd;
+}
+
+nav, .lower-footer, .gray {
+    background-color: #d9d9d9;
+}
+
+.logo {
+    font-family: GoodDog;
+    font-size: 48px;
+}
+
+.upper-header > *, .lower-footer > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    height: 100%;
+}
+
+.upper-header > *, .lower-footer > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 100%;
+}
+
+header > nav {
+    font-size: 20px;
+}
+
+header > nav > ul > li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 100%;
+    height: 100%;
+}
+
+a.icon {
+    height: 100%;
+    
+    cursor: pointer;
+}
+
+a.icon > img {
+    box-sizing: border-box;
+    
+    padding: 4px;
+    height: 100%;
+}
+
+/**/
+
+.social {
+    justify-content: space-between;
+}
+
+.page-title {
+    margin: 16px 33.33% 32px 33.33%;
+    
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    
+    border-color: black;
+    
+    padding-bottom: 16px;
+    
+    text-align: center;
+}
+
+.page-inner {
+    margin: 32px 0 64px 0;
+}
+
+.form-subtitle {
+    margin: 0 0 1em 0;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    padding-bottom: 0.5em;
+}
+
+.form-bigtitle {
+    margin-bottom: 1em;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    padding-bottom: 0.5em;
+    
+    text-align: center;
+}
+
+/* Responsive styles */
+
+@media only screen and (max-width: 768px) {
+    
+    div.upper-footer > * {
+        display: none;
+    }
+    
+}
+
+@media only screen and (max-width: 600px) {
+    
+}

@@ -1,0 +1,10 @@
+
+.shadow {
+    box-shadow : 0 1px 4px 1px gray;
+}
+
+@media only screen and (max-width: 768px) {
+    .shadow.narrow-fade {
+        box-shadow: none !important;
+    }
+}

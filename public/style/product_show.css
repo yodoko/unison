@@ -1,0 +1,179 @@
+
+/**/
+
+.container0 {
+    display: flex;
+}
+
+.product-picture {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 16px;
+    width: 50%;
+}
+
+img.product {
+    width: 100%;
+}
+
+.button {
+    min-width: 32px;
+    margin: 0.25em;
+}
+
+/**/
+
+.product-desc {
+    /display: flex;
+    /flex-direction: column;
+    
+    box-sizing: border-box;
+    
+    padding: 16px;
+    
+    width: 50%;
+}
+
+.price {
+    margin: 0.675em 0;
+    
+    color: gray;
+    
+    font-size: 24px;
+}
+
+.form-category {
+    display: flex;
+    flex-wrap: wrap;
+    
+    margin-top: 16px;
+    margin-bottom: 20px;
+    padding-left: 0.5em;
+    padding-bottom: 0.25em;
+    
+    user-select: none;
+    overflow-x: auto;
+}
+
+.form-category * {
+    font-size: 18px;
+}
+
+.slide {
+    flex-wrap: nowrap;
+}
+
+.slide::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+    background-color: white;
+}
+
+.slide::-webkit-scrollbar-track {
+    border-radius : 16px;
+    
+    background-color: white;
+}
+
+.slide::-webkit-scrollbar-track:hover {
+    background-color: #F7F7F7;
+}
+
+.slide::-webkit-scrollbar-thumb {
+    border-radius: 16px;
+    
+    width: 4px;
+    
+    background-color: #43B5CD;
+}
+
+/**/
+
+label.charityIcon {
+    padding: 4px;
+    min-width: 64px;
+    min-height: 64px;
+}
+
+label.charityIcon > img {
+    width: 100%;
+    height: 100%;
+    
+    pointer-events: none;
+}
+
+/**/
+
+.product-details {
+    display: flex;
+    
+    margin: 32px 0 0 0;
+    border-style: solid;
+    border-width: 1px 0 0 0;
+    padding: 32px 6.25%;
+}
+
+.product-details > * {
+    padding-left: 16px;
+    width: 100%;
+}
+
+.product-details .form-subtitle {
+    border-color: gray;
+    padding-left: 8px;
+}
+
+.product-details ul {
+    padding: 0 16px 16px 16px;
+}
+
+.product-details ul > li {
+    margin: 0.5em 0;
+}
+
+/**/
+
+@media only screen and (max-width: 768px) {
+    .container0 {
+        flex-direction: column;
+    }
+    
+    .container0 > * {
+        width: 100%;
+    }
+    
+    img.product {
+        width: 256px;
+    }
+    
+    .product-details {
+        flex-direction: column;
+    }
+    
+    .product-details > * {
+        padding: 0;
+    }
+    
+}
+
+@media only screen and (max-width: 512px) {
+    .container0 {
+        padding: 16px;
+    }
+    
+    img.product {
+        width: 192px;
+    }
+}
+
+@media only screen and (max-width: 384px) {
+    .container0 {
+        padding: 8px;
+    }
+    
+    img.product {
+        width: 128px;
+    }
+}

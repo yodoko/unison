@@ -1,0 +1,27 @@
+
+.container-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+    margin: 0 8.33%;
+}
+
+.container1 {
+    display: flex;
+    flex-direction: column;
+    
+    margin: 16px;
+    min-height: 240px;
+}
+
+div.option-full {
+    flex-grow: 1;
+}
+
+@media only screen and (max-width: 768px) {
+    .container-line {
+        margin: 0;
+    }
+}

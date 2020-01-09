@@ -1,0 +1,33 @@
+<header class="shadow">
+    <div class="upper-header">
+        <div class="test" style='justify-content: flex-start;'>
+            <a class="logo" style='color: white;' href="{{ path('app_home') }}">UNISON</a>
+        </div>
+        <div class="test">
+            <input type="search" style='width: 256px;'>
+        </div>
+        <div class="test" style='justify-content: flex-end;'>
+            <a class="icon" href="{{ path('app_login') }}"><img src="../images/icones-transp/icone-compte.png"></a>
+            <a class="icon" href="{{ path('app_basket') }}"><img src="../images/icones-transp/icone-panier.png"></a>
+        </div>
+    </div>
+    <nav>
+        <ul>
+            <li>
+                <a href="{{ path('app_learnmore') }}">
+                    À propos de nous
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('app_associations') }}">
+                    Associations
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('app_articles') }}">
+                    Vêtements
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>

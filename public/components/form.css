@@ -1,0 +1,76 @@
+
+/**/
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]:checked + label {
+    transition: 0s;
+    
+    border-color: #43B5CD;
+    background-color: #43B5CD;
+    color: white;
+}
+
+/**/
+
+.date-input {
+    display: flex;
+    width: 256px;
+}
+
+input[type="number"].dn-day {
+    border-radius: 0.25em 0 0 0.25em;
+}
+
+input[type="number"].dn-month {
+    border-radius: 0 0 0 0;
+}
+
+input[type="number"].dn-year {
+    border-radius: 0 0.25em 0.25em 0;
+}
+
+/**/
+
+div.submit {
+    display: flex;
+    justify-content: flex-end;
+}
+
+div.options {
+    display: flex;
+    justify-content: space-between;
+}
+
+div.option-full {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+div.option-full > * {
+    width: 100%;
+}
+
+div.option-center {
+    display: flex;
+    justify-content: center;
+}
+
+div.submit *, div.options *, div.option-full *, div.option-center * {
+    font-size: 24px;
+}
+
+.form-category {
+    margin-top: 24px;
+    margin-bottom: 32px;
+}
+
+.form-row {
+    display : flex;
+    
+    margin: 1em 0 2em 0;
+}

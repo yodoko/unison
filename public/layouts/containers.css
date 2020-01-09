@@ -1,0 +1,24 @@
+
+.centerer {
+    display: flex;
+    justify-content: center;
+}
+
+.container0 {
+    box-sizing: border-box;
+    padding: 32px 64px;
+    width: 768px;
+}
+
+.container1 {
+    box-sizing: border-box;
+    padding: 32px;
+    width: 384px;
+}
+
+@media only screen and (max-width: 768px) {
+    .container0 {
+        padding: 32px;
+        width: 100%;
+    }
+}

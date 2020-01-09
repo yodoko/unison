@@ -13,6 +13,6 @@ class BasketController extends AbstractController
      */
     public function basket()
     {
-        return $this->render('basket.html.twig');
+        return $this->render('cart/index.html.twig');
     }
 }

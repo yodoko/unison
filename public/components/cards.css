@@ -1,0 +1,40 @@
+.card {
+    transition: 0.375s;
+    box-sizing: border-box;
+    padding: 2em 1.5em;
+}
+
+.round {
+    overflow: hidden;
+    border-radius: 0.5em;
+}
+
+.card-image {
+    border-bottom: 1px solid lightgray;
+}
+
+.card-image {
+    height: 150px;
+    text-align: center;
+}
+
+.card-image img {
+    height: 100%;
+}
+
+.card-info {
+    font-weight: bold;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.price, .name {
+    align-self: center;
+}
+
+.actions>a.button {
+    height: 40px;
+    width: 100%;
+}

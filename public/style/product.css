@@ -1,0 +1,57 @@
+.row .card {
+    margin-bottom: 20px;
+    margin: 16px auto;
+}
+
+.row .col {
+    margin: 0 auto;
+}
+
+.col.l3 {
+    padding-top: 20px;
+}
+
+.col.l3>h2 {
+    text-align: center;
+}
+
+.filters {
+    margin-top: 20px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 1000px) {
+    .col.l3 {
+        padding-top: 0px;
+    }
+    .filter-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .filter-title {
+        position: relative;
+        right: 30px;
+    }
+}
+
+.filter-title {
+    position: relative;
+    right: 25px;
+}
+
+.filter, .filter-title {
+    align-self: center;
+    color: #888;
+}
+
+.filter {
+    margin: 4px auto;
+}
+
+h2 {
+    padding: 5px 0;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+}

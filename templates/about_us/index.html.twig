@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block style %}
+<link rel="stylesheet" href="../style/about_us.css">
+{% endblock %}
+
+{% block title %}
+À propos de UNISON
+{% endblock %}
+
+{% block content %}
+<div class="row full">
+    <div class="col s12 m12 l12 parallax ">
+        <h1 class="title">Qui sommes nous ?</h1>
+        <p>
+            UNISON est une association qui possède des valeurs fortes.
+        </p>
+        <p>
+            Son but est de vendre des produits fabriqués en France
+            afin de reverser de l'argent à des oeuvres caritatives.
+        </p>
+    </div>
+    <div class="col s12 m12 l12 pad ">
+        <h2 class="title">Des produits de qualité et écologique</h2>
+        <div class="container">
+            <div class="col s12 m12 l6">
+                <img class="left" src="../images/about_us/lin.JPG" alt="le lin c'est propre et écologique">
+            </div>
+            <div class="col s12 m12 l6">
+                <p>
+                    <strong>Le lin est un choix plus écologique</strong> car la méthode
+                    de production du <a href="">tissu en lin</a> à partir de la plante
+                    utilise beaucoup moins d'eau qu'il n'en faut pour produire la même quantité
+                    de coton.
+                </p>
+                <p>
+                    Ce qui en fait un choix plus écologique.
+                    On utilise moins de pesticides dans la culture du lin
+                    que dans celle du coton et le lin peut être traité sans usage de produits chimiques.
+                    Ce qui est assurément un bonne chose pour la planète.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col s12 m12 l12 pad tgrey">
+        <h2 class="title">Made in France</h2>
+        <div class="container">
+            <div class="col s12 m12 l6">
+                <p>
+                    Convaincus avant l'heure des vertues du Made in France,
+                    désormais au coeur des préoccupations, nous avons fait le pari de fabriquer nos
+                    articles dans des ateliers français à taille humaine.
+                </p>
+                <p>
+                    L'ensemble du processus est réalisé à la main, par des artisans tisseurs et brodeurs
+                    qui maîtrisent à la perfection le savoir-faire du prêt-à-porter.
+                </p>
+                <p>
+                    Les illustrations et broderies de nos vêtements sont effectuées par des artistes,
+                    connus ou non, qui créent de véritables oeuvres d'art, uniques et originales.
+                </p>
+            </div>
+            <div class="col s12 m12 l6">
+               <img class="right" src="../images/about_us/france.png" alt="le lin c'est propre et écologique">
+            </div>
+        </div>
+    </div>
+    <div class="col s12 m12 l12 pad ">
+        <h2 class="title">Notre équipe</h2>
+        <div class="container bordered-container">
+            <p>
+                Notre équipe se tient à votre entière disposition pour répondre à toutes vos questions sur notre
+                association, nos valeurs et nos produits.
+            </p>
+
+            {# href="mailto:contact@unison.fr" #}
+            <p>
+                Vous pouvez nous contacter directement par E-mail:
+                À l'adresse <a class="green"> contact@unison.fr </a>
+            </p>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}

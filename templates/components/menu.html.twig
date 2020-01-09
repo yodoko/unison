@@ -1,0 +1,16 @@
+{% macro menu(title, filters) %}
+
+<ul class="filters">
+    <h3 class="filter-title">
+        {{ title |upper }}
+    </h3>
+
+    {% for sort in filters %}
+        <li class="filter">
+            {{ sort |capitalize }}
+        </li>
+    {% endfor %}
+
+</ul>
+
+{% endmacro %}

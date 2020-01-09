@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% from "components/bouton_compte.html.twig" import big_button %}
+
+{% block style %}
+<link rel="stylesheet" href="../layouts/template.css">
+<link rel="stylesheet" href="../components/buttons.css">
+<link rel="stylesheet" href="../style/account_index.css">
+{% endblock style %}
+
+{% block title %}
+Mon compte
+{% endblock title %}
+
+{% block content %}
+<div class="page-inner">
+    <h3 class="page-title">Mon compte</h3>
+    
+    <p class="centered">Bienvenue sur la page d'accueil de votre compte personnel.</p>
+    <p class="centered">Vous pouvez y gérer vos informations personnelles ainsi que vos
+        commandes.</p>
+
+    <div id="row0">
+
+        {{ big_button('list.png', 'HISTORIQUE ET DETAILS DE MES COMMANDES') }}
+
+        {{ big_button('arrows.png', 'MES RETOURS de MARCHANDISE') }}
+
+        {{ big_button('user.png', 'MES INFORMATIONS PERSONNELLES') }}
+        
+        {{ big_button('house.png', 'MES ADRESSES') }}
+
+        <!--
+            I left an example of your previous code here
+
+        <div class="button big full black">
+            <div class="top">
+                <img src="../images/house.png"></img>
+            </div>
+            <div class="description">
+                MES ADRESSES
+            </div>
+        </div>
+        -->
+    
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block style %}
+<link rel="stylesheet" href="../components/carousel.css">
+<link rel="stylesheet" href="../style/charity.css">
+{% endblock %}
+
+{% block title %}
+Nos associations partenaires
+{% endblock %}
+
+{% block content %}
+<div class="row">
+
+    {# carousel container #}
+    <div class="col s12 m12 l8">
+
+        <div class="carousel">
+            {% for charity in charity_array %}
+            <div class="carousel-item shadow" ext-link="{{ charity['link'] }}" charity-name="{{ charity['name'] }}">
+                <img src="../images/{{ charity['image_name'] }}" alt="Soutenez {{ charity['name'] }} dans sa lutte !!">
+            </div>
+            {% endfor %}
+
+        </div>
+
+
+    </div>
+
+    <div class="col s12 m12 l4 marged">
+        {# description container, padding added to p+p #}
+        <div class="description shadow ">
+
+            <h2 class="description-title"> {{ charity_array[0]['name'] }} </h2>
+            {% for charity in charity_array %}
+
+            {% for text in charity['texts'] %}
+
+            <p id="desc" class="hidden-text" data-target="{{ charity['name'] }}">
+                {{ text }}
+            </p>
+
+            {% endfor %}
+
+            {% endfor %}
+        </div>
+
+    </div>
+
+    {# action container #}
+    <div class="col s12 m12 l12">
+        {# visit link with right absolute position #}
+        <a href="" class="button blue visit">
+            En savoir plus sur l'association
+        </a>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="../js/carousel.js"></script>
+<script src="../js/charity.js"></script>
+{% endblock %}

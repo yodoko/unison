@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% from "components/product.html.twig" import card %}
+{% from "components/menu.html.twig" import menu %}
+
+{% block style %}
+<link rel="stylesheet" href="../components/cards.css">
+<link rel="stylesheet" href="../style/product.css">
+{% endblock %}
+
+{% block title %}
+Quel type de vetements ?
+{% endblock %}
+
+{% block content %}
+<div class="row">
+
+    <div class=" col s12 m12 l3 ">
+
+        <h2 class="">{{ 'catégories' |upper}}</h2>
+
+        <div class="filter-container">
+
+            {{ menu('unisexe', [
+                'téléton',
+                'octobre Rose',
+                'resto du coeur'
+            ]) }}
+
+
+            {{ menu('collaborations', [
+                'T-shirt',
+                'Sweat',
+                'Pantalon'
+            ]) }}
+
+            {{ menu('taile', [
+                's',
+                'm',
+                'l',
+                'xL'
+            ]) }}
+
+            {{ menu('couleur', [
+            'noir',
+            'blanc',
+            'autre'
+            ]) }}
+
+        </div>
+
+    </div>
+
+    <div class="col s12 m12 l9 ">
+        {% for product in product_array %}
+        <div class="col s12 m6 l3 ">
+            {{ card(product['product_name'], product['image_name'], product['price']) }}
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}

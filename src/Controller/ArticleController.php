@@ -20,7 +20,7 @@ class ArticleController extends AbstractController
     {
         $articles =$entityManager->getRepository(Article::class)->findAll();
 
-        return $this->render('articles.html.twig', [
+        return $this->render('product/index.html.twig', [
             'articles' => $articles
         ]);
     }

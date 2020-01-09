@@ -1,0 +1,14 @@
+{% macro card(name, address, city, postal_code, country) %}
+<a href="" class="card1 shadow" href="">
+    <h3 class="form-subtitle">{{ name }}</h3>
+    <p>{{ address }}</p>
+    <p>{{ postal_code }} {{ city }}</p>
+    <p>{{ country }}</p>
+</a>
+{% endmacro card %}
+
+{% macro add_card(action) %}
+<div class="card1 shadow button blue">
+    {{action}}
+</div>
+{% endmacro add_card %}

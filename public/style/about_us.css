@@ -1,0 +1,74 @@
+.col.pad {
+    padding: 32px 0;
+}
+
+p a {
+    color: green;
+}
+
+.parallax {
+    height: 512px;
+    background: url(../images/about_us/banner.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.parallax>* {
+    color: white;
+    position: relative;
+    text-shadow: 4px 4px 8px black;
+}
+
+.parallax>img {
+    z-index: -1200;
+    position: absolute;
+    width: 100%;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.parallax>h1 {
+    top: 128px;
+    font-size: 3em;
+}
+
+.parallax>p {
+    top: 128px;
+    width: 40%;
+    margin: 0 auto;
+    font-size: 1.8em;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.container.bordered-container {
+    width: 60%;
+    padding: 0 2em;
+    border: 2px solid lightgray;
+}
+
+.container img.right {
+    position: relative;
+    top: 25px;
+    left: 250px;
+}
+
+.col.pad p {
+    font-size: 20px;
+}
+
+.side img {
+    object-fit: cover;
+}
+
+.tgrey {
+    background-color: #d9d9d9;
+}

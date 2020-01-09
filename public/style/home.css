@@ -1,0 +1,381 @@
+html {
+    font-family: 'sans-serif';
+}
+
+body {
+
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #43B5CD;
+    font-family: Roboto;
+    color: black;
+    height: 74px;
+    width: 100%;
+}
+
+.header .headera {
+    display: flex;
+    align-self: flex-start;
+    justify-content: flex-start;
+    width: 33%;
+    height: 100%;
+}
+
+.header .headerb {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    width: 33%;
+    height: 50%;
+}
+/*
+.header .headerb {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    width: 33%;
+    height: 100%;
+}
+*/
+.header .headerc {
+    display: flex;
+    color: black;
+    align-self: flex-end;
+    align-items: center;
+    justify-content: flex-end;
+    width: 33%;
+    height:100%;
+}
+
+.header .headera .logo-pic{
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 50%;
+}
+
+.presentation .logo{
+    font-family: GoodDog;
+}
+
+.header .headera .logo{
+    display: flex;
+    font-family: GoodDog;
+    color: white;
+    align-self: center;
+    font-size: 55px;
+    height: 100%;
+    width: 50%;
+    margin-left: 10%;
+}
+
+.header .headerc .login {
+    display: flex;
+    color: black;
+    justify-content: center;
+    align-self: flex-end;
+    align-items: center;
+    width: 33%;
+    height: 100%;
+}
+
+.header .headerc .basket {
+    display: flex;
+    color: black;
+    justify-content: center;
+    align-self: flex-end;
+    align-items: center;
+    width: 33%;
+    height: 100%;
+}
+
+.header2 {
+    background-color: #d9d9d9;
+    display: flex;
+    justify-content: space-around;
+    font-family: Roboto;
+    font-size: large;
+    color: black;
+    height: 64px;
+    width: 100%;
+}
+
+.header2 .articles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    width: 20%;
+    height:100%;
+}
+
+.header2 .associations {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    width: 20%;
+    height:100%;
+}
+
+.header2 .learnmore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    width: 20%;
+    height:100%;
+}
+/*
+.header2 .register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    width: 20%;
+    height:100%;
+}
+
+
+.header2 .contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    width: 20%;
+    height:100%;
+}
+*/
+
+.slogan {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    padding: 0.5em 0;
+    height:100%;
+    margin-top: 1px;
+    color: white;
+    background-color: #43B5CD;
+    font-family: GoodDog;
+    border: 2px solid #d9d9d9;
+    border-radius: 8px;
+    text-align: center;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    ////flex-wrap: wrap;
+}
+
+.content .presentation {
+    /display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    /align-self: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #d9d9d9;
+    padding: 32px 64px;
+    /width: 66%;
+    border-radius: 8px;
+}
+
+.content .presentation .titre {
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    text-align: center;
+}
+
+.content .presentation .explication {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 0.5em 0 1em 0;
+}
+
+.content .nouveautes {
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    justify-content: center;
+    /align-self: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 32px;
+    /width:33%;
+}
+
+.nouveautes > .a {
+    /width: 100%;
+}
+
+.content .nouveautes img{
+    box-sizing: border-box;
+    width: 256px;
+}
+
+.titre-longueur {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0.5em 0;
+    width: 100%;
+    color: white;
+    background-color: #43B5CD;
+    font-family: Montserrat, sans-serif;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.row1 {
+    display: flex;
+    /flex-wrap: wrap;
+    
+    padding: 32px 16px;
+}
+
+.row1 > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    margin: 0 16px;
+}
+
+.row1 > .a {
+    flex-grow: 1;
+    padding: 0 3.125%;
+}
+
+.row1 > .b {
+    /width: 33.33%;
+}
+
+
+
+.liste-associations {
+    display: flex;
+    padding: 2%;
+    
+    background-color: #EBEBEB;
+}
+
+.liste-associations > .colonne {
+    display: flex;
+    width: 100%;
+}
+
+.liste-associations > .colonne.top {
+    align-items: start;
+    padding-bottom: 6.25%;
+}
+
+.liste-associations > .colonne.bottom {
+    align-items: end;
+    padding-top: 6.25%;
+}
+
+.liste-associations > .colonne img {
+    border-radius: 100%;
+    width: 100%;
+}
+
+.soutenez {
+    display: inline-block;
+    margin: 32px auto;
+    padding: 0.5em;
+    
+    background-color: #FFBD59;
+}
+
+.explicationfab {
+    display: flex;
+    
+    padding: 32px;
+}
+
+.explicationfab > .illustration {
+    display: flex;
+    align-items: center;
+    
+    width: 12.5%;
+}
+
+.illustration img {
+    width: 100%;
+}
+
+.explicationfab > .texte {
+    display: block;
+    
+    padding: 0 64px;
+    width: 75%;
+}
+
+div.option-center * {
+    font-size: 1em;
+}
+
+button {
+    border-radius: 1em;
+    padding: 0.5em 3em;
+}
+
+@media only screen and (max-width: 768px) {
+    .row1 {
+        flex-direction: column;
+    }
+    
+    .explicationfab {
+        padding: 1em;
+    }
+    
+    .explicationfab > .texte {
+        padding: 0;
+        width: 100%;
+    }
+    
+    .explicationfab > .illustration {
+        display: none;
+    }
+    
+    .liste-associations {
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 512px) {
+    .row1 {
+        padding: 0;
+    }
+    
+    .row1 > div {
+        margin: 0;
+        padding: 0 !important;
+    }
+    
+    .liste-associations {
+        flex-wrap: wrap;
+        padding: 8px;
+    }
+    
+    .liste-associations > .colonne {
+        margin: 8px;
+        padding: 0 !important;
+        width: 128px;
+    }
+}
+
+@media only screen and (max-width: 384px) {
+    
+}

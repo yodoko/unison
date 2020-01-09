@@ -1,0 +1,43 @@
+
+.top {
+    display : flex;
+    align-items : center;
+    justify-content : center;
+    
+    height : 50%;
+}
+
+.description {
+    display : flex;
+    align-items : start;
+    justify-content : center;
+    
+    height : 50%;
+    
+    text-align : center;
+}
+
+img {
+    height : 100%;
+}
+
+.centered {
+    text-align: center;
+}
+
+#row0 {
+    display : flex;
+    justify-content : space-around;
+    margin: 64px 6.25% 0 8.33%;
+}
+
+@media only screen and (max-width: 768px) {
+    #row0 {
+        flex-direction: column;
+    }
+    
+    #row0 > * {
+        margin: 1em 0;
+        width: 100%;
+    }
+}

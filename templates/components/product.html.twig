@@ -1,0 +1,23 @@
+{% macro card(name, color, price) %}
+
+<div class="card shadow round">
+    <div class="card-image">
+        <img src="../images/produit/{{name}}/{{color}}" alt="{{name}}">
+    </div>
+    <div class="card-info">
+        <div class="name">
+            {{name}}
+        </div>
+        <div class="price">
+            {{ price }} €
+        </div>
+    </div>
+    <div class="actions ">
+        <a class="blue button">
+            Voir
+        </a>
+    </div>
+</div>
+
+{% endmacro %}
+

@@ -13,6 +13,6 @@ class AssociationsController extends AbstractController
      */
     public function associations()
     {
-        return $this->render('associations.html.twig');
+        return $this->render('charity/index.html.twig');
     }
 }

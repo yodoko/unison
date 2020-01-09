@@ -13,6 +13,6 @@ class LearnMoreController extends AbstractController
      */
     public function contact()
     {
-        return $this->render('learnmore.html.twig');
+        return $this->render('about_us/index.html.twig');
     }
 }

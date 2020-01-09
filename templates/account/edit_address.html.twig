@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block style %}
+<link rel="stylesheet" href="../layouts/containers.css">
+<link rel="stylesheet" href="../components/criterions.css">
+<link rel="stylesheet" href="../components/form.css">
+<style>
+
+input.form-bigtitle {
+    display: block;
+    
+    border-width: 0 0 1px 0;
+    border-radius: 16px 16px 0 0;
+    width: 100%;
+    
+    border-color: black;
+    color: black;
+    
+    font-size: 2em;
+    font-weight: bold;
+}
+
+input.form-bigtitle:hover {
+    border-color: black;
+    color: black;
+}
+
+input.form-bigtitle:focus {
+    border-color: black;
+    background-color: #EFFFFF;
+    color: black;
+}
+
+</style>
+{% endblock %}
+
+{% block title %}Modification des adresses{% endblock %}
+
+{% block content %}
+<div class="centerer">
+    <form class="container0 shadow narrow-fade">
+        <input class="form-bigtitle" value="Adresse 1"></input>
+        
+        <div class="form-category">
+            <div class="criterion">
+                <input>
+                <label>Adresse</label>
+            </div>
+            
+            <div class="criterion">
+                <input>
+                <label>Ville</label>
+            </div>
+            
+            <div class="criterion">
+                <input>
+                <label>Code postal</label>
+            </div>
+            
+            <div class="criterion">
+                <input>
+                <label>Pays</label>
+            </div>
+        </div>
+        
+        <div class="options">
+            <a class="button hover-full orange">Supprimer</a>
+            <input type="submit" class="hover-full blue" value="Enregistrer">
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}

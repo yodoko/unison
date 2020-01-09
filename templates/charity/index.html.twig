@@ -1,8 +1,8 @@
 {% extends 'base.html.twig' %}
 
 {% block style %}
-<link rel="stylesheet" href="../components/carousel.css">
-<link rel="stylesheet" href="../style/charity.css">
+<link rel="stylesheet" href="{{ asset('components/carousel.css') }}">
+<link rel="stylesheet" href="{{ asset('style/charity.css') }}">
 {% endblock %}
 
 {% block title %}
@@ -18,7 +18,7 @@ Nos associations partenaires
         <div class="carousel">
             {% for charity in charity_array %}
             <div class="carousel-item shadow" ext-link="{{ charity['link'] }}" charity-name="{{ charity['name'] }}">
-                <img src="../images/{{ charity['image_name'] }}" alt="Soutenez {{ charity['name'] }} dans sa lutte !!">
+                <img src="{{ asset('images/' ~ charity['image_name']) }}" alt="Soutenez {{ charity['name'] }} dans sa lutte !!">
             </div>
             {% endfor %}
 
@@ -59,6 +59,6 @@ Nos associations partenaires
 {% endblock %}
 
 {% block script %}
-<script src="../js/carousel.js"></script>
-<script src="../js/charity.js"></script>
+<script src="{{ asset('js/carousel.js') }} "></script>
+<script src="{{ asset('js/charity.js') }} "></script>
 {% endblock %}

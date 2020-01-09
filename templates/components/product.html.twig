@@ -2,7 +2,7 @@
 
 <div class="card shadow round">
     <div class="card-image">
-        <img src="../images/produit/{{name}}/{{color}}" alt="{{name}}">
+        <img src="{{ asset('images/produit/' ~ name ~ '/' ~ color) }}" alt="{{name}}">
     </div>
     <div class="card-info">
         <div class="name">

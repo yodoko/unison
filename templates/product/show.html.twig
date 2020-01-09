@@ -56,55 +56,13 @@
                 <h3 class="form-subtitle">Association à soutenir</h3>
 
                 <div class="form-category slide">
-                    <input type="radio" id="asso0" name="association" value="0" required>
-                    <label class="charityIcon button blue" for="asso0" title="WWF">
-                        <img src="{{ asset('images/logos-transp/logo0.png') }}">
-                    </label>
 
-                    <input type="radio" id="asso1" name="association" value="1">
-                    <label class="charityIcon button blue" for="asso1" title="Les restaurants du cœur">
-                        <img src="../images/logos-transp/logo1.png">
+                    {% for charity in charity_array %}
+                    <input type="radio" id="asso{{charity['id']}}" name="association" value="{{charity['id']}}" required>
+                    <label class="charityIcon button blue" for="asso{{charity['id']}}" title="{{charity['name']}}">
+                        <img src="../images/logos-transp/{{charity['image_name']}}">
                     </label>
-
-                    <input type="radio" id="asso2" name="association" value="2">
-                    <label class="charityIcon button blue" for="asso2" title="Secours populaire français">
-                        <img src="../images/logos-transp/logo2.png">
-                    </label>
-
-                    <input type="radio" id="asso3" name="association" value="3">
-                    <label class="charityIcon button blue" for="asso3" title="UNICEF">
-                        <img src="../images/logos-transp/logo3.png">
-                    </label>
-
-                    <input type="radio" id="asso4" name="association" value="4">
-                    <label class="charityIcon button blue" for="asso4" title="Action contre La Faim">
-                        <img src="../images/logos-transp/logo4.png">
-                    </label>
-
-                    <input type="radio" id="asso5" name="association" value="5">
-                    <label class="charityIcon button blue" for="asso5" title="Sea Shepherd Conservation Society">
-                        <img src="../images/logos-transp/logo5.png">
-                    </label>
-
-                    <input type="radio" id="asso6" name="association" value="6">
-                    <label class="charityIcon button blue" for="asso6" title="Croix-Rouge française">
-                        <img src="../images/logos-transp/logo6.png">
-                    </label>
-
-                    <input type="radio" id="asso7" name="association" value="7">
-                    <label class="charityIcon button blue" for="asso7" title="Médecins sans frontières">
-                        <img src="../images/logos-transp/logo7.png">
-                    </label>
-
-                    <input type="radio" id="asso8" name="association" value="8">
-                    <label class="charityIcon button blue" for="asso8" title="30 Millions d'Amis">
-                        <img src="../images/logos-transp/logo8.png">
-                    </label>
-
-                    <input type="radio" id="asso9" name="association" value="9">
-                    <label class="charityIcon button blue" for="asso9" title="Institut Pasteur">
-                        <img src="../images/logos-transp/logo9.png">
-                    </label>
+                    {% endfor %}
 
                 </div>
 

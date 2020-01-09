@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block style %}
-<link rel="stylesheet" href="../components/buttons.css">
-<link rel="stylesheet" href="../components/form.css">
-<link rel="stylesheet" href="../style/product_show.css">
+<link rel="stylesheet" href="{{ asset('components/buttons.css') }}">
+<link rel="stylesheet" href="{{ asset('components/form.css') }}">
+<link rel="stylesheet" href="{{ asset('components/product_show.css') }}">
 {% endblock style %}
 
 {% block title %}
@@ -16,36 +16,35 @@
         <div class="container0 shadow">
             <div class="product-picture">
                 <img class="product" alt='Vetement en lin chez UNISON'
-                    src="../images/produit/{{ name }}/{{ product_array[0]['image_name'] }}">
+                    src="{{ asset(images/produit/ ~ name ~ '/' ~ product_array[0]['image_name']) }}">
             </div>
             <div class="product-desc">
                 <h2 class="form-bigtitle">{{name}}</h2>
-                
+
                 <p class="price">35.00 €</p>
-                
+
                 <div class="form-category">
                     <input type="radio" id="taille-XS" name="taille" value="XS">
                     <label class="button blue" for="taille-XS">XS</label>
-                    
+
                     <input type="radio" id="taille-S" name="taille" value="S">
                     <label class="button blue" for="taille-S">S</label>
-                    
+
                     <input type="radio" id="taille-M" name="taille" value="M" checked>
                     <label class="button blue" for="taille-M">M</label>
-                    
+
                     <input type="radio" id="taille-L" name="taille" value="L">
                     <label class="button blue" for="taille-L">L</label>
-                    
+
                     <input type="radio" id="taille-XL" name="taille" value="XL">
                     <label class="button blue" for="taille-XL">XL</label>
-                    
+
                 </div>
-                
+
                 <div class="form-category">
                     {% for product in product_array %}
-                    <input type="radio" id="couleur-{{product['color']}}" name="couleur"
-                        value="{{product['color']}}"
-                        data-target="../images/produit/{{ name }}/{{ product['image_name'] }}"
+                    <input type="radio" id="couleur-{{product['color']}}" name="couleur" value="{{product['color']}}"
+                        data-target="{{ asset(images/produit/ ~ name ~ '/' ~ product['image_name']) }}"
                         {% if product['color'] == product_array[0]['color'] %} checked {% endif %}>
                     <label class="button blue" for="couleur-{{product['color']}}">
                         {{product['color'] | capitalize}}
@@ -59,67 +58,67 @@
                 <div class="form-category slide">
                     <input type="radio" id="asso0" name="association" value="0" required>
                     <label class="charityIcon button blue" for="asso0" title="WWF">
-                        <img src="../images/logos-transp/logo0.png">
+                        <img src="{{ asset('images/logos-transp/logo0.png') }}">
                     </label>
-                    
+
                     <input type="radio" id="asso1" name="association" value="1">
                     <label class="charityIcon button blue" for="asso1" title="Les restaurants du cœur">
                         <img src="../images/logos-transp/logo1.png">
                     </label>
-                    
+
                     <input type="radio" id="asso2" name="association" value="2">
                     <label class="charityIcon button blue" for="asso2" title="Secours populaire français">
                         <img src="../images/logos-transp/logo2.png">
                     </label>
-                    
+
                     <input type="radio" id="asso3" name="association" value="3">
                     <label class="charityIcon button blue" for="asso3" title="UNICEF">
                         <img src="../images/logos-transp/logo3.png">
                     </label>
-                    
+
                     <input type="radio" id="asso4" name="association" value="4">
                     <label class="charityIcon button blue" for="asso4" title="Action contre La Faim">
                         <img src="../images/logos-transp/logo4.png">
                     </label>
-                    
+
                     <input type="radio" id="asso5" name="association" value="5">
                     <label class="charityIcon button blue" for="asso5" title="Sea Shepherd Conservation Society">
                         <img src="../images/logos-transp/logo5.png">
                     </label>
-                    
+
                     <input type="radio" id="asso6" name="association" value="6">
                     <label class="charityIcon button blue" for="asso6" title="Croix-Rouge française">
                         <img src="../images/logos-transp/logo6.png">
                     </label>
-                    
+
                     <input type="radio" id="asso7" name="association" value="7">
                     <label class="charityIcon button blue" for="asso7" title="Médecins sans frontières">
                         <img src="../images/logos-transp/logo7.png">
                     </label>
-                    
+
                     <input type="radio" id="asso8" name="association" value="8">
                     <label class="charityIcon button blue" for="asso8" title="30 Millions d'Amis">
                         <img src="../images/logos-transp/logo8.png">
                     </label>
-                    
+
                     <input type="radio" id="asso9" name="association" value="9">
                     <label class="charityIcon button blue" for="asso9" title="Institut Pasteur">
                         <img src="../images/logos-transp/logo9.png">
                     </label>
-                    
+
                 </div>
-                
+
                 <div class="option-full">
                     <input type="submit" class="hover-full blue" value="Ajouter au panier">
                 </div>
             </div>
         </div>
     </form>
-    
+
     <div class="product-details shadow">
         <div>
             <h3 class="form-subtitle">Informations article</h3>
-            
+
             <ul>
                 <li>T-shirt par Unison</li>
                 <li>Pour un coup de frais</li>
@@ -128,18 +127,19 @@
                 <li>Logo brodé</li>
             </ul>
         </div>
-        
+
         <div>
             <h3 class="form-subtitle">Marque</h3>
-            
+
             <ul>
-                <li>Unison, une association en cours de création, souhaite pouvoir vendre ses produits sur Internet afin de reverser de l'argent à des associations</li>
+                <li>Unison, une association en cours de création, souhaite pouvoir vendre ses produits sur Internet afin
+                    de reverser de l'argent à des associations</li>
             </ul>
         </div>
-        
+
         <div>
             <h3 class="form-subtitle">À propos de moi</h3>
-            
+
             <ul>
                 <li>Jersey doux respirant</li>
                 <li>Tissu style t-shirt</li>
@@ -152,7 +152,7 @@
 
 {% block script %}
 <script>
-    
+
     function getClikedCheckbox() {
         var checkboxes = document.getElementsByName('couleur');
         for (var i = 0; i < checkboxes.length; i++) {

@@ -1,8 +1,8 @@
 {% extends "base.html.twig" %}
 
 {% block style %}
-<link rel="stylesheet" href="../components/form.css">
-<link rel="stylesheet" href="../style/home.css">
+<link rel="stylesheet" href="{{ asset('components/form.css') }}">
+<link rel="stylesheet" href="{{ asset('style/home.css') }}">
 {% endblock %}
 
 {#
@@ -49,15 +49,10 @@
                             Voilà pourquoi le t-shirt UNISON vous permet de donner à votre association préférée sans avoir un impact négatif sur la planète !<br>
                         </p>
                         <div class="option-center">
-                            <button class="btn btn-default full blue"
-                                    type="button"
-                                    role="button"
-                                    onclick="location.href = ''">
-                                    {#
-                                    href="">
-                                    #}
+                            <a class="btn btn-default button full blue"
+                                    href = "{{ path('app_learnmore') }}">
                                 En savoir plus
-                            </button>
+                            </a>
                         </div>
                     </div>
                 {% endblock %}
@@ -69,16 +64,14 @@
                         <strong>Nouvelle collection</strong>
                     </h2>
 
-                    <a href="">
-                        <img src="tshirt_noir.jpg" alt="Nouvelle collection">
+                    <a href="{{ path('app_articles') }}">
+                        <img src="{{ asset('images/produit/' ~ 'Nom du produit' ~ '/' ~ 'noir.jpg') }}" alt="Nouvelle collection">
                     </a>
                     
-                    <button class="btn btn-default full blue"
-                            type="button"
-                            role="button"
-                            onclick="location.href = ''">
+                    <a class="btn btn-default button full blue"
+                            href = "{{ path('app_articles') }}">
                         Achetez-moi
-                    </button>
+                    </a>
                     </div>
                 {% endblock %}
             </div>
@@ -90,43 +83,43 @@
     {% block associations %}
         <div class="liste-associations">
             <div class="colonne top">
-                <a><img src="../images/logos-transp/logo0.png"></a>
+                <a><img src="{{ asset('images/logos-transp/logo0.png') }}"></a>
             </div>
             
             <div class="colonne bottom">
-                <a><img src="../images/logos-transp/logo1.png"></a>
+                <a><img src="{{ asset('images/logos-transp/logo1.png') }}"></a>
             </div>
             
             <div class="colonne top">
-                <a><img src="../images/logos-transp/logo2.png"></a>
+                <a><img src="{{ asset('images/logos-transp/logo2.png') }}"></a>
             </div>
             
             <div class="colonne bottom">
-                <a><img src="../images/logos-transp/logo3.png"></a>
+                <a><img src="{{ asset('images/logos-transp/logo3.png') }}"></a>
             </div>
             
             <div class="colonne top">
-                <a><img src="../images/logos-transp/logo4.png"></a>
+                <a><img src="{{ asset('images/logos-transp/logo4.png') }}"></a>
             </div>
             
             <div class="colonne bottom">
-                <a><img src="../images/logos-transp/logo5.png"></a>
+                <a><img src="{{ asset('images/logos-transp/logo5.png') }}"></a>
             </div>
             
             <div class="colonne top">
-                <a><img src="../images/logos-transp/logo6.png"></a>
+                <a><img src="{{ asset('images/logos-transp/logo6.png') }}"></a>
             </div>
             
             <div class="colonne bottom">
-                <a><img src="../images/logos-transp/logo7.png"></a>
+                <a><img src="{{ asset('images/logos-transp/logo7.png') }}"></a>
             </div>
             
             <div class="colonne top">
-                <a><img src="../images/logos-transp/logo8.png"></a>
+                <a><img src="{{ asset('images/logos-transp/logo8.png') }}"></a>
             </div>
             
             <div class="colonne bottom">
-                <a><img src="../images/logos-transp/logo9.png"></a>
+                <a><img src="{{ asset('images/logos-transp/logo9.png') }}"></a>
             </div>
         </div>
         {# METTRE LES IMAGES ET LES LIENS VERS LES PAGES DES DIFFERENTES ASSOCIATIONS #}
@@ -144,7 +137,7 @@
             <h1 class="titre-longueur">FABRICATION DES T-SHIRTS</h1>
             <div class="explicationfab">
                 <div class="illustration">
-                    <img src="../images/about_us/made-in-france.PNG">
+                    <img src="{{ asset('images/about_us/made-in-france.PNG') }}">
                 </div>
                 <div class="texte">
                     <p>
@@ -165,7 +158,7 @@
                     </p>
                 </div>
                 <div class="illustration">
-                    <img src="../images/about_us/france.png">
+                    <img src="{{ asset('images/about_us/france.png') }}">
                 </div>
             </div>
         {% endblock %}

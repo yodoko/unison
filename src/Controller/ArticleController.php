@@ -65,7 +65,10 @@ class ArticleController extends AbstractController
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function view(int $id, EntityManagerInterface $entityManager) {
-        
+        $price;
+        $name;
+        $product_array = [];
+
         $charity_array = [
             [
                 'id' => 0,
@@ -119,10 +122,8 @@ class ArticleController extends AbstractController
             ],
         ];
 
-        $name ;
-        $product_array = [];
-        
         if($id === 0){
+            $price = 35.00;
             $name = 'Nom du produit';
 
             array_push($product_array, [   
@@ -141,25 +142,27 @@ class ArticleController extends AbstractController
             ]);
             
         }else if($id === 1) {
+            $price = 45.00;
             $name = 'Chemise tendance';
 
             array_push($product_array, [   
-                'id' => 1,
+                'color' => 'noir',
                 'image_name' => 'noir.jpg',
-                'price' => 53.00 ,
             ]);
         }else {
+            $price = 70.00;
             $name = 'Contre le racisme';
 
             array_push($product_array, [   
-                'id' => 2,
-                'image_name' => 'jaune.jpg',
-                'price' => 15.00 ,
+                'color' => 'jaune',
+                'image_name' => 'noir.jpg',
             ]);
         }
 
         $options = [
             'authentified' => false,
+            'id' => $id,
+            'price' => $price,
             'name' => $name,
             'product_array' => $product_array,
             'charity_array' => $charity_array,

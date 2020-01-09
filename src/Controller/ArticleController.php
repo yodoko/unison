@@ -155,7 +155,7 @@ class ArticleController extends AbstractController
 
             array_push($product_array, [   
                 'color' => 'jaune',
-                'image_name' => 'noir.jpg',
+                'image_name' => 'jaune.jpg',
             ]);
         }
 

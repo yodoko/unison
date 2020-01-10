@@ -326,7 +326,7 @@ div.option-center * {
     font-size: 1em;
 }
 
-button {
+a.button {
     border-radius: 1em;
     padding: 0.5em 3em;
 }
@@ -334,6 +334,11 @@ button {
 @media only screen and (max-width: 768px) {
     .row1 {
         flex-direction: column;
+        margin-bottom: 32px;
+    }
+    
+    .row1 > .a {
+        margin-bottom: 32px;
     }
     
     .explicationfab {
@@ -360,7 +365,8 @@ button {
     }
     
     .row1 > div {
-        margin: 0;
+        margin-left: 0;
+        margin-right: 0;
         padding: 0 !important;
     }
     

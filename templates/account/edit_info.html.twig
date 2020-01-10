@@ -1,97 +1,93 @@
 {% extends 'base.html.twig' %}
 
 {% block style %}
-
 <link rel="stylesheet" href="../components/criterions.css">
 <link rel="stylesheet" href="../components/form.css">
 <link rel="stylesheet" href="../style/edit_info.css">
-
 {% endblock %}
 
 {% block title %}Vos informations personnelles{% endblock %}
 
 {% block content %}
-
-<div class="centerer">
-    <form class="container0 shadow narrow-fade">
-        <h1 class="form-bigtitle">Vos informations personnelles</h1>
-        
-        <h3 class="form-subtitle">Civilité</h3>
-        
-        <div class="form-category">
-            <input type="radio" id="civilite-ns" name="civilite" value="ns" checked>
-            <label class="button blue" for="civilite-ns">Non spécifié</label>
+<div class="page-inner">
+    <div class="centerer">
+        <form class="container0 shadow narrow-fade">
+            <h1 class="form-bigtitle">Vos informations personnelles</h1>
             
-            <input type="radio" id="civilite-mme" name="civilite" value="mme">
-            <label class="button blue" for="civilite-mme">Mme</label>
+            <h3 class="form-subtitle">Civilité</h3>
             
-            <input type="radio" id="civilite-m" name="civilite" value="m">
-            <label class="button blue" for="civilite-m">M.</label>
-        </div>
-        
-        <h3 class="form-subtitle">Identité</h3>
-        
-        <div class="form-category">
-            <div class="criterion">
-                <input required value="Def">
-                <label>Prénom</label>
+            <div class="form-category">
+                <input type="radio" id="civilite-ns" name="civilite" value="ns" checked>
+                <label class="button blue" for="civilite-ns">Non spécifié</label>
+                
+                <input type="radio" id="civilite-mme" name="civilite" value="mme">
+                <label class="button blue" for="civilite-mme">Mme</label>
+                
+                <input type="radio" id="civilite-m" name="civilite" value="m">
+                <label class="button blue" for="civilite-m">M.</label>
             </div>
             
-            <div class="criterion">
-                <input required value="Def">
-                <label>Nom</label>
+            <h3 class="form-subtitle">Identité</h3>
+            
+            <div class="form-category">
+                <div class="criterion">
+                    <input required value="Def">
+                    <label>Prénom</label>
+                </div>
+                
+                <div class="criterion">
+                    <input required value="Def">
+                    <label>Nom</label>
+                </div>
+                
+                <div class="criterion">
+                    <input type="email" required value="Def">
+                    <label>E-mail</label>
+                </div>
             </div>
             
-            <div class="criterion">
-                <input type="email" required value="Def">
-                <label>E-mail</label>
-            </div>
-        </div>
-        
-        <h3 class="form-subtitle">Date de naissance</h3>
-        
-        <div class="form-category date-input">
-            <div class="criterion">
-                <input type="number" class="dn-day" value="01">
-                <label>Jour</label>
-            </div><div class="criterion">
-                <input type="number" class="dn-month" value="01">
-                <label>Mois</label>
-            </div><div class="criterion">
-                <input type="number" class="dn-year" value="1970">
-                <label>Année</label>
-            </div>
-        </div>
-        
-        <h3 class="form-subtitle">Changer de mot de passe</h3>
-        
-        <div class="form-category">
-            <div class="criterion">
-                <input type="password">
-                <label>Mot de passe actuel</label>
+            <h3 class="form-subtitle">Date de naissance</h3>
+            
+            <div class="form-category date-input">
+                <div class="criterion">
+                    <input type="number" class="dn-day" value="01">
+                    <label>Jour</label>
+                </div><div class="criterion">
+                    <input type="number" class="dn-month" value="01">
+                    <label>Mois</label>
+                </div><div class="criterion">
+                    <input type="number" class="dn-year" value="1970">
+                    <label>Année</label>
+                </div>
             </div>
             
-            <div class="criterion">
-                <input type="password">
-                <label>Nouveau mot de passe</label>
+            <h3 class="form-subtitle">Changer de mot de passe</h3>
+            
+            <div class="form-category">
+                <div class="criterion">
+                    <input type="password">
+                    <label>Mot de passe actuel</label>
+                </div>
+                
+                <div class="criterion">
+                    <input type="password">
+                    <label>Nouveau mot de passe</label>
+                </div>
+                
+                <div class="criterion">
+                    <input type="password">
+                    <label>Confirmation du mot de passe</label>
+                </div>
             </div>
             
-            <div class="criterion">
-                <input type="password">
-                <label>Confirmation du mot de passe</label>
+            <div class="submit">
+                <input type="submit" class="hover-full blue" value="Enregistrer">
             </div>
-        </div>
-        
-        <div class="submit">
-            <input type="submit" class="hover-full blue" value="Enregistrer">
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
-
 {% endblock %}
 
 {% block script %}
-
 <script src="../js/datepickers.js"></script>
-
 {% endblock %}

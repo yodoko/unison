@@ -37,37 +37,39 @@ input.form-bigtitle:focus {
 {% block title %}Modification des adresses{% endblock %}
 
 {% block content %}
-<div class="centerer">
-    <form class="container0 shadow narrow-fade">
-        <input class="form-bigtitle" value="Adresse 1"></input>
-        
-        <div class="form-category">
-            <div class="criterion">
-                <input>
-                <label>Adresse</label>
+<div class="page-inner">
+    <div class="centerer">
+        <form class="container0 shadow narrow-fade">
+            <input class="form-bigtitle" value="Adresse 1"></input>
+            
+            <div class="form-category">
+                <div class="criterion">
+                    <input>
+                    <label>Adresse</label>
+                </div>
+                
+                <div class="criterion">
+                    <input>
+                    <label>Ville</label>
+                </div>
+                
+                <div class="criterion">
+                    <input>
+                    <label>Code postal</label>
+                </div>
+                
+                <div class="criterion">
+                    <input>
+                    <label>Pays</label>
+                </div>
             </div>
             
-            <div class="criterion">
-                <input>
-                <label>Ville</label>
+            <div class="options">
+                <a class="button hover-full orange">Supprimer</a>
+                <input type="submit" class="hover-full blue" value="Enregistrer">
             </div>
-            
-            <div class="criterion">
-                <input>
-                <label>Code postal</label>
-            </div>
-            
-            <div class="criterion">
-                <input>
-                <label>Pays</label>
-            </div>
-        </div>
-        
-        <div class="options">
-            <a class="button hover-full orange">Supprimer</a>
-            <input type="submit" class="hover-full blue" value="Enregistrer">
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
 {% endblock %}
 

@@ -51,15 +51,17 @@
 {% block title %}Vos adresses{% endblock %}
 
 {% block content %}
-<h3 class="page-title">Vos adresses</h3>
+<div class="page-inner">
+    <h3 class="page-title">Vos adresses</h3>
 
-<div class="cards-container">
+    <div class="cards-container">
 
-    {% for address in address_array %}
-        {{ card(address['name'], address['address'], address['city'], address['postal_code'], address['country']) }}
-    {% endfor %}
-        
-    <a class="card1 full button blue shadow">Nouvelle adresse</a>
+        {% for address in address_array %}
+            {{ card(address['name'], address['address'], address['city'], address['postal_code'], address['country']) }}
+        {% endfor %}
+            
+        <a class="card1 full button blue shadow">Nouvelle adresse</a>
+    </div>
 </div>
 {% endblock %}
 

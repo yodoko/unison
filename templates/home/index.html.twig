@@ -5,20 +5,6 @@
 <link rel="stylesheet" href="{{ asset('style/home.css') }}">
 {% endblock %}
 
-{#
-{% block content %}
-<!DOCTYPE html>
-<html>
-    <body>
-        {% block body %}
-            <div class="slogan">
-                <h1>MAKE THE WORLD GREAT IN UNISON</h1>
-            </div>
-        {% endblock %}
-    </body>
-</html>
-#}
-
 {% block head %}
     {{ parent() }}
     {#
@@ -83,43 +69,43 @@
     {% block associations %}
         <div class="liste-associations">
             <div class="colonne top">
-                <a><img src="{{ asset('images/logos-transp/logo0.png') }}"></a>
+                <a href="https://www.wwf.fr/" target="_blank"><img src="{{ asset('images/logos-transp/logo0.png') }}"></a>
             </div>
             
             <div class="colonne bottom">
-                <a><img src="{{ asset('images/logos-transp/logo1.png') }}"></a>
+                <a href="https://www.restosducoeur.org/" target="_blank"><img src="{{ asset('images/logos-transp/logo1.png') }}"></a>
             </div>
             
             <div class="colonne top">
-                <a><img src="{{ asset('images/logos-transp/logo2.png') }}"></a>
+                <a href="https://www.secourspopulaire.fr/" target="_blank"><img src="{{ asset('images/logos-transp/logo2.png') }}"></a>
             </div>
             
             <div class="colonne bottom">
-                <a><img src="{{ asset('images/logos-transp/logo3.png') }}"></a>
+                <a href="https://www.unicef.fr/" target="_blank"><img src="{{ asset('images/logos-transp/logo3.png') }}"></a>
             </div>
             
             <div class="colonne top">
-                <a><img src="{{ asset('images/logos-transp/logo4.png') }}"></a>
+                <a href="https://www.actioncontrelafaim.org/" target="_blank"><img src="{{ asset('images/logos-transp/logo4.png') }}"></a>
             </div>
             
             <div class="colonne bottom">
-                <a><img src="{{ asset('images/logos-transp/logo5.png') }}"></a>
+                <a href="https://www.seashepherd.fr/" target="_blank"><img src="{{ asset('images/logos-transp/logo5.png') }}"></a>
             </div>
             
             <div class="colonne top">
-                <a><img src="{{ asset('images/logos-transp/logo6.png') }}"></a>
+                <a href="https://www.croix-rouge.fr/" target="_blank"><img src="{{ asset('images/logos-transp/logo6.png') }}"></a>
             </div>
             
             <div class="colonne bottom">
-                <a><img src="{{ asset('images/logos-transp/logo7.png') }}"></a>
+                <a href="https://www.msf.fr/" target="_blank"><img src="{{ asset('images/logos-transp/logo7.png') }}"></a>
             </div>
             
             <div class="colonne top">
-                <a><img src="{{ asset('images/logos-transp/logo8.png') }}"></a>
+                <a href="https://www.30millionsdamis.fr/" target="_blank"><img src="{{ asset('images/logos-transp/logo8.png') }}"></a>
             </div>
             
             <div class="colonne bottom">
-                <a><img src="{{ asset('images/logos-transp/logo9.png') }}"></a>
+                <a href="https://www.pasteur.fr/" target="_blank"><img src="{{ asset('images/logos-transp/logo9.png') }}"></a>
             </div>
         </div>
         {# METTRE LES IMAGES ET LES LIENS VERS LES PAGES DES DIFFERENTES ASSOCIATIONS #}
@@ -137,7 +123,7 @@
             <h1 class="titre-longueur">FABRICATION DES T-SHIRTS</h1>
             <div class="explicationfab">
                 <div class="illustration">
-                    <img src="{{ asset('images/about_us/made-in-france.PNG') }}">
+                    <img src="{{ asset('images/about_us/made-in-france.png') }}">
                 </div>
                 <div class="texte">
                     <p>

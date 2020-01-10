@@ -10,7 +10,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class SecurityController extends AbstractController
 {
     /**
-     * @Route("/login", name="app_login")
+     * @Route("/login", name="app_login", methods={"GET"})
      * @param AuthenticationUtils $authenticationUtils
      * @return Response
      */
@@ -25,7 +25,31 @@ class SecurityController extends AbstractController
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
 
-        return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
+        return $this->render('account/connection.html.twig');
+    }
+
+    /**
+     * @Route("/connect", name="app_connect", methods={"POST"})
+     * @param AuthenticationUtils $authenticationUtils
+     * @return Response
+     */
+    public function connect(AuthenticationUtils $authenticationUtils): Response
+    {
+        // if ($this->getUser()) {
+        //     return $this->redirectToRoute('target_path');
+        // }
+
+        // get the login error if there is one
+        $error = $authenticationUtils->getLastAuthenticationError();
+        // last username entered by the user
+        $lastUsername = $authenticationUtils->getLastUsername();
+
+        $options = [
+            'authentified'=>true,
+        ];
+
+
+        return $this->render('cart/index.html.twig', $options);
     }
 
     /**

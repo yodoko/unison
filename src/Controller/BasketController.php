@@ -13,8 +13,13 @@ class BasketController extends AbstractController
      */
     public function index()
     {
+        $authentified = false;
+
+        $options = [
+            'authentified' => $authentified,
+        ];
         // if authentified 
-        return $this->render('cart/index.html.twig');
+        return $this->render('cart/index.html.twig', $options);
         // else
         // return $this->render('cart/connection.html.twig');
     }

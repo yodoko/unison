@@ -27,34 +27,54 @@
         const dnMonth = dateInputDiv.getElementsByClassName("dn-month")[0];
         const dnYear = dateInputDiv.getElementsByClassName("dn-year")[0];
         
-        dnDay.addEventListener("input", function(event) {
-            const value = parseInt(this.value);
+        dnDay.addEventListener("change", function(event) {
+            let day = Math.round(parseFloat(this.value));
             
-            if(value < 1) {
-                this.value = "1";
+            if(day < 1) {
+                day = 1;
             }
             
             const month = parseInt(dnMonth.value);
             const year = parseInt(dnYear.value);
             const daysCount = totalMonthDays(month, year);
             
-            if(value > daysCount) {
-                this.value = "" + daysCount;
+            if(day > daysCount) {
+                day = daysCount;
+            }
+            
+            this.value = "" + day;
+            
+            if(this.value.length < 2) {
+                this.value = "0" + this.value;
             }
         });
         
-        dnMonth.addEventListener("input", function(event) {
-            const month = parseInt(this.value);
+        dnMonth.addEventListener("change", function(event) {
+            let month = Math.round(parseFloat(this.value));
             
             if(month < 1) {
-                this.value = "1";
+                month = 1;
             }
             
             if(month > 12) {
-                this.value = "12";
+                month = 12;
             }
             
-            dnDay.dispatchEvent(new Event("input"));
+            this.value = "" + month;
+            
+            if(this.value.length < 2) {
+                this.value = "0" + this.value;
+            }
+            
+            dnDay.dispatchEvent(new Event("change"));
+        });
+        
+        dnYear.addEventListener("change", function(event) {
+            const year = Math.round(parseFloat(this.value));
+            
+            this.value = "" + year;
+            
+            dnDay.dispatchEvent(new Event("change"));
         });
     }
 }

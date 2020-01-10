@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Article;
+use App\Entity\Address;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
- * @method Article|null find($id, $lockMode = null, $lockVersion = null)
- * @method Article|null findOneBy(array $criteria, array $orderBy = null)
- * @method Article[]    findAll()
- * @method Article[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Address|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Address|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Address[]    findAll()
+ * @method Address[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ArticleRepository extends ServiceEntityRepository
+class AddressRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Article::class);
+        parent::__construct($registry, Address::class);
     }
 
     // /**
-    //  * @return Article[] Returns an array of Article objects
+    //  * @return Address[] Returns an array of Address objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class ArticleRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Article
+    public function findOneBySomeField($value): ?Address
     {
         return $this->createQueryBuilder('a')
             ->andWhere('a.exampleField = :val')

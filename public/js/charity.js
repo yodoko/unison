@@ -48,8 +48,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function updateLink(newLink) {
-        var anchor = document.querySelector('.visit'); // c
-        anchor.href = newLink;
+        var anchors = document.querySelectorAll('.visit'); // c
+        for (var i = 0; i < anchors.length; ++i) {
+            anchors[i].href = newLink;
+        }
         console.log('Changed the external link');
     }
 

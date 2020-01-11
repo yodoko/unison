@@ -29,13 +29,13 @@ class Product
     private $price;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Color", mappedBy="product", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Color", mappedBy="product")
      */
-    private $color;
+    private $colors;
 
     public function __construct()
     {
-        $this->color = new ArrayCollection();
+        $this->colors = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -70,15 +70,15 @@ class Product
     /**
      * @return Collection|Color[]
      */
-    public function getColor(): Collection
+    public function getColors(): Collection
     {
-        return $this->color;
+        return $this->colors;
     }
 
     public function addColor(Color $color): self
     {
-        if (!$this->color->contains($color)) {
-            $this->color[] = $color;
+        if (!$this->colors->contains($color)) {
+            $this->colors[] = $color;
             $color->setProduct($this);
         }
 
@@ -87,8 +87,8 @@ class Product
 
     public function removeColor(Color $color): self
     {
-        if ($this->color->contains($color)) {
-            $this->color->removeElement($color);
+        if ($this->colors->contains($color)) {
+            $this->colors->removeElement($color);
             // set the owning side to null (unless already changed)
             if ($color->getProduct() === $this) {
                 $color->setProduct(null);

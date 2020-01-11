@@ -29,19 +29,19 @@ class Color
     private $image;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Product", inversedBy="color")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Product", inversedBy="colors")
      * @ORM\JoinColumn(nullable=false)
      */
     private $product;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Purchase", inversedBy="charities")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Purchase", mappedBy="colors")
      */
-    private $purchase;
+    private $purchases;
 
     public function __construct()
     {
-        $this->purchase = new ArrayCollection();
+        $this->purchases = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -88,15 +88,16 @@ class Color
     /**
      * @return Collection|Purchase[]
      */
-    public function getPurchase(): Collection
+    public function getPurchases(): Collection
     {
-        return $this->purchase;
+        return $this->purchases;
     }
 
     public function addPurchase(Purchase $purchase): self
     {
-        if (!$this->purchase->contains($purchase)) {
-            $this->purchase[] = $purchase;
+        if (!$this->purchases->contains($purchase)) {
+            $this->purchases[] = $purchase;
+            $purchase->addColor($this);
         }
 
         return $this;
@@ -104,8 +105,9 @@ class Color
 
     public function removePurchase(Purchase $purchase): self
     {
-        if ($this->purchase->contains($purchase)) {
-            $this->purchase->removeElement($purchase);
+        if ($this->purchases->contains($purchase)) {
+            $this->purchases->removeElement($purchase);
+            $purchase->removeColor($this);
         }
 
         return $this;

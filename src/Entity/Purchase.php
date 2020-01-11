@@ -19,58 +19,45 @@ class Purchase
     private $id;
 
     /**
-     * @ORM\Column(type="date")
-     */
-    private $date;
-
-    /**
      * @ORM\Column(type="integer")
      */
     private $quantity;
 
     /**
-     * @ORM\Column(type="string", length=5)
+     * @ORM\Column(type="string", length=255)
      */
     private $size;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Color", mappedBy="purchase")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\Column(type="date")
      */
-    private $color;
+    private $date;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="purchase")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="purchases")
      * @ORM\JoinColumn(nullable=false)
      */
     private $user;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Charity", mappedBy="purchase")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToMany(targetEntity="App\Entity\Charity", inversedBy="purchases")
      */
     private $charities;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Color", inversedBy="purchases")
+     */
+    private $colors;
 
     public function __construct()
     {
         $this->charities = new ArrayCollection();
+        $this->colors = new ArrayCollection();
     }
 
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getDate(): ?\DateTimeInterface
-    {
-        return $this->date;
-    }
-
-    public function setDate(\DateTimeInterface $date): self
-    {
-        $this->date = $date;
-
-        return $this;
     }
 
     public function getQuantity(): ?int
@@ -97,14 +84,14 @@ class Purchase
         return $this;
     }
 
-    public function getColor(): ?Color
+    public function getDate(): ?\DateTimeInterface
     {
-        return $this->color;
+        return $this->date;
     }
 
-    public function setColor(?Color $color): self
+    public function setDate(\DateTimeInterface $date): self
     {
-        $this->color = $color;
+        $this->date = $date;
 
         return $this;
     }
@@ -133,7 +120,6 @@ class Purchase
     {
         if (!$this->charities->contains($charity)) {
             $this->charities[] = $charity;
-            $charity->addPurchase($this);
         }
 
         return $this;
@@ -143,7 +129,32 @@ class Purchase
     {
         if ($this->charities->contains($charity)) {
             $this->charities->removeElement($charity);
-            $charity->removePurchase($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Color[]
+     */
+    public function getColors(): Collection
+    {
+        return $this->colors;
+    }
+
+    public function addColor(Color $color): self
+    {
+        if (!$this->colors->contains($color)) {
+            $this->colors[] = $color;
+        }
+
+        return $this;
+    }
+
+    public function removeColor(Color $color): self
+    {
+        if ($this->colors->contains($color)) {
+            $this->colors->removeElement($color);
         }
 
         return $this;

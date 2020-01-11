@@ -31,11 +31,6 @@ class Info
      */
     private $birthdate;
 
-    /**
-     * @ORM\OneToOne(targetEntity="App\Entity\User", inversedBy="info", cascade={"persist", "remove"})
-     */
-    private $user;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -73,18 +68,6 @@ class Info
     public function setBirthdate(\DateTimeInterface $birthdate): self
     {
         $this->birthdate = $birthdate;
-
-        return $this;
-    }
-
-    public function getUser(): ?User
-    {
-        return $this->user;
-    }
-
-    public function setUser(?User $user): self
-    {
-        $this->user = $user;
 
         return $this;
     }

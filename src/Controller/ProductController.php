@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Product;
 use App\Form\ProductType;
+use App\Repository\CharityRepository;
 use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -51,13 +52,13 @@ class ProductController extends AbstractController
     /**
      * @Route("/{id}", name="product_view", methods={"GET"})
      */
-    public function view(int $id, Product $product): Response
+    public function view(int $id, Product $product, CharityRepository $charityRepository): Response
     {
         $product = $this->getDoctrine()
             ->getRepository(Product::class)
             ->find($id);
 
-            $charity_array = [] ; 
+        $charity_array = $charityRepository->findAll() ; 
 
         return $this->render('product/view.html.twig', [
             'product' => $product,

@@ -17,9 +17,9 @@ Nos associations partenaires
 
         <div class="carousel">
             {% for charity in charity_array %}
-            <div class="carousel-item shadow" ext-link="{{ charity['link'] }}" charity-name="{{ charity['name'] }}">
-                <img src="{{ asset('images/' ~ charity['image_name']) }}"
-                    alt="Soutenez {{ charity['name'] }} dans sa lutte !!">
+            <div class="carousel-item shadow" ext-link="{{ charity.website }}" charity-name="{{ charity.name }}">
+                <img src="{{ asset('images/logos-transp/' ~ charity.image) }}"
+                    alt="Soutenez {{ charity.name }} dans sa lutte !!">
             </div>
             {% endfor %}
 
@@ -38,13 +38,13 @@ Nos associations partenaires
             {# description container, padding added to p+p #}
             <div class="description ">
 
-                <h2 class="description-title"> {{ charity_array[0]['name'] }} </h2>
+                <h2 class="description-title"> {{ charity_array.0.name }} </h2>
                 {% for charity in charity_array %}
 
-                {% for text in charity['texts'] %}
+                {% for text in charity.texts %}
 
-                <p id="desc" class="hidden-text" data-target="{{ charity['name'] }}">
-                    {{ text }}
+                <p id="desc" class="hidden-text" data-target="{{ charity.name }}">
+                    {{ text.description }}
                 </p>
 
                 {% endfor %}

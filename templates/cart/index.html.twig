@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
 
+{% from "components/cart_item.html.twig" import item %}
+
 {% block style %}
 <link rel="stylesheet" href="{{ asset('components/criterions.css') }}">
 <link rel="stylesheet" href="{{ asset('components/form.css') }}">
@@ -22,52 +24,15 @@
             </div>
             
             <div class="option-center">
-                <a class="button blue hover-full" href="{{ path("app_login") }}">CONNEXION</a>
+                <a class="button blue hover-full" href="{{ path('app_login') }}">CONNEXION</a>
             </div>
         </div>
         {% else %}
         <div class="container0 shadow" id="shopping-cart">
             <div class="items">
-                <div class="item">
-                    <div class="picture">
-                        <a>
-                            <img src="{{ asset('images/produit' ~ 'Nom du produit' ~ '/' ~ 'noir.jpg') }}">
-                        </a>
-                    </div>
-                    
-                    <div class="details">
-                        <a><h3 class="form-subtitle">T-shirt noir L</h3></a>
-                        
-                        <div class="main form-category">
-                            <div>
-                                <text>Quantité</text>
-                                <input type="number" min="1" max="9" step="1" value="1">
-                            </div>
-                            
-                            <div>
-                                <text>Association 0</text>
-                            </div>
-                            
-                            <div class="price">
-                                <text>35.00 €</text>
-                            </div>
-                        </div>
-                        
-                        <div class="options">
-                            <div>
-                                <var class="availability" value="true"></var>
-                            </div>
-                            
-                            <div class="submit">
-                                <a class="button hover-full blue">Modifier</a>
-                                
-                                <button class="hover-full orange">Supprimer</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                
+                {#% for item in item_array %#}
+                    {{ item() }}
+                {#% endfor %#}
             </div>
             
             <div class="sum">

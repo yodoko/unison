@@ -1,0 +1,40 @@
+{% macro item() %}
+<div class="item">
+    <div class="picture">
+        <a>
+            <img src="{{ asset('images/produit' ~ 'Nom du produit' ~ '/' ~ 'noir.jpg') }}">
+        </a>
+    </div>
+    
+    <div class="details">
+        <a><h3 class="form-subtitle">T-shirt noir L</h3></a>
+        
+        <div class="main form-category">
+            <div>
+                <text>Quantité</text>
+                <input type="number" min="1" max="9" step="1" value="1">
+            </div>
+            
+            <div>
+                <text>Association 0</text>
+            </div>
+            
+            <div class="price">
+                <text>35.00 €</text>
+            </div>
+        </div>
+        
+        <div class="options">
+            <div>
+                <var class="availability" value="true"></var>
+            </div>
+            
+            <div class="submit">
+                <a class="button hover-full blue">Modifier</a>
+                
+                <button class="hover-full orange">Supprimer</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endmacro item%}

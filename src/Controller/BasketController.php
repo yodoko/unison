@@ -6,10 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route("/basket")
+ */
 class BasketController extends AbstractController
 {
     /**
-     * @Route("/basket", name="app_basket")
+     * @Route("/", name="basket_index")
      */
     public function index()
     {
@@ -25,7 +28,7 @@ class BasketController extends AbstractController
     }
 
     /**
-     * @Route("/basket/add", name="app_basket_add")
+     * @Route("/add", name="basket_add")
      */
     public function add()
     {
@@ -33,7 +36,7 @@ class BasketController extends AbstractController
     }
 
      /**
-     * @Route("/basket/confirm", name="app_basket_confirm")
+     * @Route("/confirm", name="basket_confirm")
      */
     public function confirm()
     {

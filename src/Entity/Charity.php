@@ -31,21 +31,16 @@ class Charity
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $logo;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
     private $image;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Purchase", inversedBy="charities")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Purchase", mappedBy="charities")
      */
-    private $purchase;
+    private $purchases;
 
     public function __construct()
     {
-        $this->purchase = new ArrayCollection();
+        $this->purchases = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -77,18 +72,6 @@ class Charity
         return $this;
     }
 
-    public function getLogo(): ?string
-    {
-        return $this->logo;
-    }
-
-    public function setLogo(string $logo): self
-    {
-        $this->logo = $logo;
-
-        return $this;
-    }
-
     public function getImage(): ?string
     {
         return $this->image;
@@ -104,15 +87,16 @@ class Charity
     /**
      * @return Collection|Purchase[]
      */
-    public function getPurchase(): Collection
+    public function getPurchases(): Collection
     {
-        return $this->purchase;
+        return $this->purchases;
     }
 
     public function addPurchase(Purchase $purchase): self
     {
-        if (!$this->purchase->contains($purchase)) {
-            $this->purchase[] = $purchase;
+        if (!$this->purchases->contains($purchase)) {
+            $this->purchases[] = $purchase;
+            $purchase->addCharity($this);
         }
 
         return $this;
@@ -120,8 +104,9 @@ class Charity
 
     public function removePurchase(Purchase $purchase): self
     {
-        if ($this->purchase->contains($purchase)) {
-            $this->purchase->removeElement($purchase);
+        if ($this->purchases->contains($purchase)) {
+            $this->purchases->removeElement($purchase);
+            $purchase->removeCharity($this);
         }
 
         return $this;

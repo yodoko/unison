@@ -32,7 +32,7 @@ class Address
     private $city;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=6)
      */
     private $postalcode;
 

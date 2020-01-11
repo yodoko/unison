@@ -38,9 +38,15 @@ class Charity
      */
     private $purchases;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Text", mappedBy="charity", orphanRemoval=true)
+     */
+    private $texts;
+
     public function __construct()
     {
         $this->purchases = new ArrayCollection();
+        $this->texts = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -107,6 +113,37 @@ class Charity
         if ($this->purchases->contains($purchase)) {
             $this->purchases->removeElement($purchase);
             $purchase->removeCharity($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Text[]
+     */
+    public function getTexts(): Collection
+    {
+        return $this->texts;
+    }
+
+    public function addText(Text $text): self
+    {
+        if (!$this->texts->contains($text)) {
+            $this->texts[] = $text;
+            $text->setCharity($this);
+        }
+
+        return $this;
+    }
+
+    public function removeText(Text $text): self
+    {
+        if ($this->texts->contains($text)) {
+            $this->texts->removeElement($text);
+            // set the owning side to null (unless already changed)
+            if ($text->getCharity() === $this) {
+                $text->setCharity(null);
+            }
         }
 
         return $this;

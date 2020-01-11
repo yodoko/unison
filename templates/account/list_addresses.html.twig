@@ -57,7 +57,7 @@
     <div class="cards-container">
 
         {% for address in address_array %}
-            {{ card(address['name'], address['address'], address['city'], address['postal_code'], address['country']) }}
+            {{ card(address.name, address.address, address.city, address.postal_code, address.country) }}
         {% endfor %}
             
         <a class="card1 full button blue shadow">Nouvelle adresse</a>

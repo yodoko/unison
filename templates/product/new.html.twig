@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Product{% endblock %}
+
+{% block body %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>New Product</title>
+            </head>
+    <body>
+            <h1>Create new Product</h1>
+
+    <form name="product" method="post">
+    <div id="product"><div><label for="product_name" class="required">Name</label><input type="text" id="product_name" name="product[name]" required="required" maxlength="255" /></div><div><label for="product_price" class="required">Price</label><input type="number" id="product_price" name="product[price]" required="required" /></div><input type="hidden" id="product__token" name="product[_token]" value="2FKOuaa_mpYbQqk3Hi_eItnoAA3mq5tfU_egYRBcO3I" /></div>
+    <button class="btn">Save</button>
+</form>
+{% endblock %}

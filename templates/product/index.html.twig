@@ -54,7 +54,7 @@ Quel type de vetements ?
     <div class="col s12 m12 l9 ">
         {% for product in product_array %}
         <div class="col s12 m6 l3 ">
-            {{ card(product['id'], product['product_name'], product['image_name'], product['price']) }}
+            {{ card(product.id, product.name, product.colors.0.image, product.price) }}
         </div>
         {% endfor %}
     </div>

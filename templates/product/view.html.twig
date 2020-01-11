@@ -6,7 +6,7 @@
 {% endblock style %}
 
 {% block title %}
-{{ name }}
+{{ product.name }}
 {% endblock title %}
 
 {% block content %}
@@ -15,12 +15,12 @@
         <div class="container0 shadow">
             <div class="product-picture">
                 <img class="product" alt='Vetement en lin chez UNISON'
-                    src="{{ asset('images/produit/' ~ name ~ '/' ~ product_array[0]['image_name']) }}">
+                    src="{{ asset('images/produit/' ~ product.name ~ '/' ~ product.colors.0.image) }}">
             </div>
             <div class="product-desc">
-                <h2 class="form-bigtitle">{{name}}</h2>
+                <h2 class="form-bigtitle">{{ product.name }}</h2>
 
-                <p class="price">{{ price }} €</p>
+                <p class="price">{{ product.price }} €</p>
 
                 <div class="form-category">
                     <input type="radio" id="taille-XS" name="taille" value="XS">
@@ -41,12 +41,12 @@
                 </div>
 
                 <div class="form-category">
-                    {% for product in product_array %}
-                    <input type="radio" id="couleur-{{product['color']}}" name="couleur" value="{{product['color']}}"
-                        data-target="{{ asset('images/produit/' ~ name ~ '/' ~ product['image_name']) }}"
-                        {% if product['color'] == product_array[0]['color'] %} checked {% endif %}>
-                    <label class="button blue" for="couleur-{{product['color']}}">
-                        {{product['color'] | capitalize}}
+                    {% for color in product.colors %}
+                    <input type="radio" id="couleur-{{ color.name }}" name="couleur" value="{{ color.id }}"
+                        data-target="{{ asset('images/produit/' ~ product.name ~ '/' ~ color.image ) }}"
+                        {% if color.name == product.colors.0.name %} checked {% endif %}>
+                    <label class="button blue" for="couleur-{{ color.name }}">
+                        {{ color.name | capitalize}}
                     </label>
                     {% endfor %}
 
@@ -57,9 +57,9 @@
                 <div class="form-category slide">
 
                     {% for charity in charity_array %}
-                    <input type="radio" id="asso{{charity['id']}}" name="association" value="{{charity['id']}}" required>
-                    <label class="charityIcon button blue" for="asso{{charity['id']}}" title="{{charity['name']}}">
-                        <img src="{{ asset('images/logos-transp/' ~ charity['image_name']) }}">
+                    <input type="radio" id="asso{{charity.id}}" name="association" value="{{ charity.id }}" required>
+                    <label class="charityIcon button blue" for="asso{{charity.id}}" title="{{ charity.name }}">
+                        <img src="{{ asset('images/logos-transp/' ~  charity.image ) }}">
                     </label>
                     {% endfor %}
 

@@ -10,39 +10,42 @@
 {% endblock style %}
 
 {% block title %}
-    Connectez-vous
+Connectez-vous
 {% endblock title %}
 
 {% block content %}
 <div class="page-inner">
     <h3 class="page-title">Connexion</h3>
-    
+
     <div class="container-line">
-        <form class="container1 shadow narrow-fade" method="post" action="{{ path("app_connect") }}" >
+        <form class="container1 shadow narrow-fade" method="post" action="{{ path("app_connect") }}">
             <h1 class="form-bigtitle">Connectez-vous</h1>
-            
+
             <div class="criterion" title="Champ requis">
-                <input required name="email">
+                <input required name="email" name="email">
                 <label>Adresse mail</label>
             </div>
             <div class="criterion" title="Champ requis">
-                <input type="password" required name="mot-de-passe">
+                <input type="password" name="password" required name="mot-de-passe">
                 <label>Mot de passe</label>
             </div>
-            
+
             <div class="option-full">
-                <input style="width:100%; height:50px;" type="submit" class="button blue hover-full" value="Se connecter">
+                <input style="width:100%; height:50px;" type="submit" class="button blue hover-full"
+                    value="Se connecter">
             </div>
+
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
         </form>
 
         <div class="container1 shadow narrow-fade">
             <h1 class="form-bigtitle">Nouveau client ?</h1>
-            
+
             <div class="option-full">
-                <a href="{{ path('app_register') }}" style="width:100%; height:50px;" class="button blue hover-full">Créer votre compte</a >
+                <a href="{{ path('app_register') }}" style="width:100%; height:50px;"
+                    class="button blue hover-full">Créer votre compte</a>
             </div>
         </div>
     </div>
 </div>
 {% endblock content %}
-

@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block title %}
-    Inscrivez-vous
+Inscrivez-vous
 {% endblock %}
 
 {% block content %}
@@ -22,28 +22,28 @@
         <div class="progArrow"><text>Informations complémentaires</text></div>
     </div>
 
-    <form class="centerer" id="form" method="POST" action="{{ path('app_account_index') }}">
+    <form class="centerer" id="form" method="POST" name="registration_form" action="{{ path('app_register') }}">
         <div class="categ-container" id="tabs">
             <div class="categ shadow narrow-fade select">
                 <div class="form-category">
                     <div class="criterion" title="Champ requis">
-                        <input autocomplete="off" required name="nom">
+                        <input autocomplete="off" required name="registration_form[lastname]">
                         <label>Nom</label>
                     </div>
                     <div class="criterion" title="Champ requis">
-                        <input required name="prenom">
+                        <input required name="registration_form[firstname]">
                         <label>Prénom</label>
                     </div>
                     <div class="criterion" title="Champ requis (identifiant@example.com)">
-                        <input type="email" required name="email">
+                        <input type="email" required name="registration_form[email]">
                         <label>Adresse mail</label>
                     </div>
                     <div class="criterion" title="Champ requis">
-                        <input type="password" required name="mot-de-passe">
+                        <input type="password" required name="registration_form[plainPassword]">
                         <label>Mot de passe</label>
                     </div>
                 </div>
-                
+
                 <div class="options">
                     <text></text>
                     <text class="button hover-full blue" onclick='selectStep(1);'>Suivant</text>
@@ -57,23 +57,27 @@
             <div class="categ shadow narrow-fade">
                 <div class="form-category">
                     <div class="criterion" title="Champ optionnel">
-                        <input name="adresse">
+                        <input name="registration_form[address][name]">
+                        <label>Nom de l'adresse</label>
+                    </div>
+                    <div class="criterion" title="Champ optionnel">
+                        <input name="registration_form[address][address]">
                         <label>Adresse</label>
                     </div>
                     <div class="criterion" title="Champ optionnel">
-                        <input name="ville">
+                        <input name="registration_form[address][city]">
                         <label>Ville</label>
                     </div>
                     <div class="criterion" title="Champ optionnel">
-                        <input name="code-postal">
+                        <input name="registration_form[address][postalcode]">
                         <label>Code postal</label>
                     </div>
                     <div class="criterion" title="Champ optionnel">
-                        <input name="pays">
+                        <input name="registration_form[address][country]">
                         <label>Pays</label>
                     </div>
                 </div>
-                
+
                 <div class="options">
                     <text class="button hover-full blue" onclick='selectStep(0);'>Précédent</text>
                     <text class="button hover-full blue" onclick='selectStep(2);'>Suivant</text>
@@ -87,39 +91,41 @@
             <div class="categ shadow narrow-fade">
                 <div class="form-category">
                     <div class="criterion" title="Champ optionnel">
-                        <input name="telephone" pattern="^\d{10}$">
+                        <input name="registration_form[info][phone]" pattern="^\d{10}$">
                         <label>Téléphone</label>
                     </div>
                 </div>
-                
+
                 <h3 class="form-subtitle">Sexe</h3>
-                
+
                 <div class="form-category">
-                    <input type="radio" id="sexe-n" name="sexe" value="n" checked>
+                    <input type="radio" id="sexe-n" name="registration_form[info][sex]" value="n" checked>
                     <label class="button blue" for="sexe-n">Non spécifié</label>
-                    
-                    <input type="radio" id="sexe-f" name="sexe" value="f">
+
+                    <input type="radio" id="sexe-f" name="registration_form[info][sex]" value="f">
                     <label class="button blue" for="sexe-f">Femme</label>
-                    
-                    <input type="radio" id="sexe-m" name="sexe" value="m">
+
+                    <input type="radio" id="sexe-m" name="registration_form[info][sex]" value="m">
                     <label class="button blue" for="sexe-m">Homme</label>
                 </div>
-                
+
                 <h3 class="form-subtitle">Date de naissance</h3>
-                
+
                 <div class="form-category date-input">
                     <div class="criterion" title="Champ optionnel">
-                        <input type="number" class="dn-day" name="naissance-jour" value="01">
+                        <input type="number" class="dn-day" name="registration_form[info][birthdate]" value="01">
                         <label>Jour</label>
-                    </div><div class="criterion" title="Champ optionnel">
-                        <input type="number" class="dn-month" name="naissance-jour" value="01">
+                    </div>
+                    <div class="criterion" title="Champ optionnel">
+                        <input type="number" class="dn-month" name="registration_form[info][birthdate]" value="01">
                         <label>Mois</label>
-                    </div><div class="criterion" title="Champ optionnel">
-                        <input type="number" class="dn-year" name="naissance-jour" value="1970">
+                    </div>
+                    <div class="criterion" title="Champ optionnel">
+                        <input type="number" class="dn-year" name="registration_form[info][birthdate]" value="1970">
                         <label>Année</label>
                     </div>
                 </div>
-                
+
                 <div class="options">
                     <text class="button hover-full blue" onclick='selectStep(1);'>Précédent</text>
                     <input class="hover-full blue" type="submit">
@@ -130,6 +136,10 @@
                 </div>
             </div>
         </div>
+
+        {# Generated by symfony #}
+        <input type="hidden" id="registration_form__token" name="registration_form[_token]"
+            value="_S1TnDV-edJ_5STgy11kAkhYAN3stDIthg0qL7m_ZNE" />
     </form>
 </div>
 {% endblock %}
@@ -137,114 +147,114 @@
 {% block script %}
 <script>
 
-function selectStep(id) {
-    const progbar = document.getElementById("progbar");
-    const progbarStep = progbar.children[id];
-    
-    if (progbarStep) {
-        selectUnique(progbarStep);
-    }
-    
-    const stepTabs = document.getElementById("tabs");
-    const stepTab = stepTabs.children[id];
-    
-    if (stepTab) {
-        selectUnique(stepTab);
-        setTabableUnique(stepTab);
-    }
-}
+    function selectStep(id) {
+        const progbar = document.getElementById("progbar");
+        const progbarStep = progbar.children[id];
 
-// 
+        if (progbarStep) {
+            selectUnique(progbarStep);
+        }
 
-function whichStep(element) {
-    while(element != null) {
-        if(hasClass(element, "categ")) {
-            const siblings = element.parentElement.children;
-            
-            for(let i = 0; i < siblings.length; ++i) {
-                if(siblings[i] === element) {
-                    return i;
+        const stepTabs = document.getElementById("tabs");
+        const stepTab = stepTabs.children[id];
+
+        if (stepTab) {
+            selectUnique(stepTab);
+            setTabableUnique(stepTab);
+        }
+    }
+
+    // 
+
+    function whichStep(element) {
+        while (element != null) {
+            if (hasClass(element, "categ")) {
+                const siblings = element.parentElement.children;
+
+                for (let i = 0; i < siblings.length; ++i) {
+                    if (siblings[i] === element) {
+                        return i;
+                    }
                 }
             }
-        }
-        
-        element = element.parentElement;
-    }
-    
-    return -1;
-}
 
-function invalidProcedure(event) {
-    event.preventDefault();
-    
-    const form = document.getElementById("form");
-    
-    if(form.checkValidity()) {
-        form.submit();
-    } else {
-        let minInvalidStep = Infinity;
-        const invalidInputs = form.querySelectorAll(".notice");
-        
-        for (let i = 0; i < invalidInputs.length; ++i) {
-            const input = invalidInputs[i];
-            const step = whichStep(input);
-            
-            if(step < minInvalidStep) {
-                minInvalidStep = step;
+            element = element.parentElement;
+        }
+
+        return -1;
+    }
+
+    function invalidProcedure(event) {
+        event.preventDefault();
+
+        const form = document.getElementById("form");
+
+        if (form.checkValidity()) {
+            form.submit();
+        } else {
+            let minInvalidStep = Infinity;
+            const invalidInputs = form.querySelectorAll(".notice");
+
+            for (let i = 0; i < invalidInputs.length; ++i) {
+                const input = invalidInputs[i];
+                const step = whichStep(input);
+
+                if (step < minInvalidStep) {
+                    minInvalidStep = step;
+                }
+            }
+
+            selectStep(minInvalidStep);
+        }
+    }
+
+    // Script on form submit
+
+    {
+        const forms = document.getElementsByTagName("form");
+
+        for (let i = 0; i < forms.length; ++i) {
+            const form = forms[i];
+
+            const submitters = form.querySelectorAll("[type='submit'], button:not([type='button']):not([type='reset'])");
+
+            for (let j = 0; j < submitters.length; ++j) {
+                const submitter = submitters[j];
+
+                submitter.addEventListener("click", invalidProcedure);
             }
         }
-        
-        selectStep(minInvalidStep);
     }
-}
 
-// Script on form submit
+    {
+        //// Invalid form inputs ////
 
-{
-    const forms = document.getElementsByTagName("form");
-    
-    for(let i = 0; i < forms.length; ++i) {
-        const form = forms[i];
-        
-        const submitters = form.querySelectorAll("[type='submit'], button:not([type='button']):not([type='reset'])");
-        
-        for(let j = 0; j < submitters.length; ++j) {
-            const submitter = submitters[j];
-            
-            submitter.addEventListener("click", invalidProcedure);
+        // Removes the invalid notice style from an input.
+
+        function removeNotice(event) {
+            removeClass(this, "notice");
+
+            this.removeEventListener(event.type, removeNotice);
+        }
+
+        // Changes the style of an invalid input.
+
+        function noticeField(element) {
+            addClass(element, "notice");
+
+            element.addEventListener("focus", removeNotice);
+        }
+
+        const inputs = document.querySelectorAll("form input");
+
+        for (let i = 0; i < inputs.length; ++i) {
+            const input = inputs[i];
+
+            input.addEventListener("invalid", function (event) {
+                noticeField(this);
+            });
         }
     }
-}
-
-{
-    //// Invalid form inputs ////
-    
-    // Removes the invalid notice style from an input.
-    
-    function removeNotice(event) {
-        removeClass(this, "notice");
-        
-        this.removeEventListener(event.type, removeNotice);
-    }
-    
-    // Changes the style of an invalid input.
-    
-    function noticeField(element) {
-        addClass(element, "notice");
-        
-        element.addEventListener("focus", removeNotice);
-    }
-    
-    const inputs = document.querySelectorAll("form input");
-    
-    for(let i = 0; i < inputs.length; ++i) {
-        const input = inputs[i];
-        
-        input.addEventListener("invalid", function(event) {
-            noticeField(this);
-        });
-    }
-}
 
 </script>
 <script src="../js/datepickers.js"></script>

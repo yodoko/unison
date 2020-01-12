@@ -24,7 +24,7 @@ class RegistrationController extends AbstractController
         $form->handleRequest($request);
 
         $condition = $form->isSubmitted();
-//      $condition &= $form->isValid();
+        // $condition &= $form->isValid();
 
         if ($condition) {
             // encode the plain password

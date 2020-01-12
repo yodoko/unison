@@ -18,6 +18,10 @@ class BasketController extends AbstractController
     {
         $authentified = false;
 
+        if($this->getUser()){
+            $authentified = true;
+        }
+
         $options = [
             'authentified' => $authentified,
         ];

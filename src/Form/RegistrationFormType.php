@@ -36,8 +36,8 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('firstname')
             ->add('lastname')
-            ->add('info', InfoType::class)
-            ->add('address',AddressType::class)
+            //->add('info', InfoType::class)
+            ->add('addresses')
         ;
     }
 

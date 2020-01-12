@@ -39,17 +39,15 @@ class RegistrationController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            // do anything else you need here, like send an email
-
-            return $this->redirectToRoute('home_index');
-
             return $guardHandler->authenticateUserAndHandleSuccess(
                 $user,
                 $request,
                 $authenticator,
                 'main' // firewall name in security.yaml
             );
-
+            
+            // do anything else you need here, like send an email
+            return $this->redirectToRoute('home_index');
         }
 
         return $this->render('registration/add.html.twig');

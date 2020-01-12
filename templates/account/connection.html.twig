@@ -18,13 +18,14 @@ Connectez-vous
     <h3 class="page-title">Connexion</h3>
 
     <div class="container-line">
-        <form class="container1 shadow narrow-fade" method="post" action="{{ path("app_connect") }}">
+        <form class="container1 shadow narrow-fade" method="POST" action="{{ path("app_connect") }}">
             <h1 class="form-bigtitle">Connectez-vous</h1>
 
             <div class="criterion" title="Champ requis">
-                <input required name="email" name="email">
+                <input required name="email">
                 <label>Adresse mail</label>
             </div>
+
             <div class="criterion" title="Champ requis">
                 <input type="password" name="password" required name="mot-de-passe">
                 <label>Mot de passe</label>

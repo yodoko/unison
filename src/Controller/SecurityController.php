@@ -2,29 +2,24 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
+use App\Form\LoginFormType;
+use App\Security\AppCustomAuthenticator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
+
 
 class SecurityController extends AbstractController
 {
     /**
      * @Route("/login", name="app_login", methods={"GET"})
-     * @param AuthenticationUtils $authenticationUtils
      * @return Response
      */
-    public function login(AuthenticationUtils $authenticationUtils): Response
-    {
-        // if ($this->getUser()) {
-        //     return $this->redirectToRoute('target_path');
-        // }
-
-        // get the login error if there is one
-        $error = $authenticationUtils->getLastAuthenticationError();
-        // last username entered by the user
-        $lastUsername = $authenticationUtils->getLastUsername();
-
+    public function login(): Response {
         return $this->render('account/connection.html.twig');
     }
 
@@ -33,21 +28,26 @@ class SecurityController extends AbstractController
      * @param AuthenticationUtils $authenticationUtils
      * @return Response
      */
-    public function connect(AuthenticationUtils $authenticationUtils): Response
-    {
-        // if ($this->getUser()) {
-        //     return $this->redirectToRoute('target_path');
-        // }
+    public function connect(Request $request, AppCustomAuthenticator $authenticator, GuardAuthenticatorHandler $guardHandler): Response
+    {        
+        $user = new User();
+        $form = $this->createForm(LoginFormType::class, $user);
+        $form->handleRequest($request);
 
-        // get the login error if there is one
-        $error = $authenticationUtils->getLastAuthenticationError();
-        // last username entered by the user
-        $lastUsername = $authenticationUtils->getLastUsername();
+        return $guardHandler->authenticateUserAndHandleSuccess(
+            $user,
+            $request,
+            $authenticator,
+            'main' // firewall name in security.yaml
+        );
+
+        if ($this->getUser()) {
+            return $this->redirectToRoute('home_index');
+        }
 
         $options = [
-            'authentified'=>true,
+            'authentified'=>false,
         ];
-
 
         return $this->render('cart/index.html.twig', $options);
     }

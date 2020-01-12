@@ -10,16 +10,16 @@ Bienvenue
 {% endblock %}
 
 {% block content %}
-{% block slogan %}
+
     <div class="slogan">
         <h1>MAKE THE WORLD GREAT IN UNISON</h1>
     </div>
-{% endblock %}
+
     <div class="content">
         <div class="row1">
             <div class="a">
-                {% block presentation %}
-                    <div class="presentation shadow">
+
+                <div class="presentation shadow">
                         <h2 class="titre">POURQUOI ACHETER UNISON</h2>
                         <p class="explication">
                             Nos t-shirts sont à but caritatif, vous donnez à l'association que vous préférez dans notre sélection !<br>
@@ -37,11 +37,11 @@ Bienvenue
                             </a>
                         </div>
                     </div>
-                {% endblock %}
-            </div>
+
+                </div>
             <div class="b">
-                {% block nouveautes %}
-                    <div class="nouveautes shadow">
+
+                <div class="nouveautes shadow">
                     <h2>
                         <strong>Nouvelle collection</strong>
                     </h2>
@@ -55,14 +55,14 @@ Bienvenue
                         Achetez-moi
                     </a>
                     </div>
-                {% endblock %}
+
             </div>
         </div>
-    {% block selection %}
+
         <h1 class="titre-longueur">NOTRE SELECTION D'ASSOCIATIONS</h1>
         
-    {% endblock %}
-    {% block associations %}
+
+
         <div class="liste-associations">
             <div class="colonne top">
                 <a href="https://www.wwf.fr/" target="_blank"><img src="{{ asset('images/logos-transp/logo0.png') }}"></a>
@@ -105,17 +105,14 @@ Bienvenue
             </div>
         </div>
         {# METTRE LES IMAGES ET LES LIENS VERS LES PAGES DES DIFFERENTES ASSOCIATIONS #}
-    {% endblock %}
-    {% block soutenir %}
+
+
         {#  #}
-        {% block soutenez %}
+
             <div class="soutenez">
                 Soutenez leurs actions !
             </div>
-        {% endblock %}
-    {% endblock %}
-        
-        {% block fabrication %}
+
             <h1 class="titre-longueur">FABRICATION DES T-SHIRTS</h1>
             <div class="explicationfab">
                 <div class="illustration">
@@ -143,6 +140,6 @@ Bienvenue
                     <img src="{{ asset('images/about_us/france.png') }}">
                 </div>
             </div>
-        {% endblock %}
+
     </div>
 {% endblock %}

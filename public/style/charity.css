@@ -32,10 +32,21 @@
 /* external link style */
 
 a.button.blue.visit {
+    border-left: none;
+    border-right: none;
     height: 50px;
     width: 100%;
     border-radius: 0%;
 }
+
+a.button.blue.visit.no-top {
+    border-top: none;
+}
+
+a.button.blue.visit.no-bottom {
+    border-bottom: none;
+}
+
 
 /* important to hide unneeded text (is needed for the js to work) */
 

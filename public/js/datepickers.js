@@ -30,7 +30,7 @@
         dnDay.addEventListener("change", function(event) {
             let day = Math.round(parseFloat(this.value));
             
-            if(day < 1) {
+            if(isNaN(day) || day < 1) {
                 day = 1;
             }
             
@@ -52,7 +52,7 @@
         dnMonth.addEventListener("change", function(event) {
             let month = Math.round(parseFloat(this.value));
             
-            if(month < 1) {
+            if(isNaN(month) || month < 1) {
                 month = 1;
             }
             
@@ -70,7 +70,11 @@
         });
         
         dnYear.addEventListener("change", function(event) {
-            const year = Math.round(parseFloat(this.value));
+            let year = Math.round(parseFloat(this.value));
+            
+            if(isNaN(year)) {
+                year = 1970;
+            }
             
             this.value = "" + year;
             

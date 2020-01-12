@@ -32,7 +32,7 @@ class BasketController extends AbstractController
      */
     public function add()
     {
-        return $this->redirectToRoute('app_articles');
+        return $this->redirectToRoute('product_index');
     }
 
      /**

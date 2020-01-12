@@ -36,6 +36,10 @@ class BasketController extends AbstractController
      */
     public function add()
     {
+
+        // do something if user is connected
+
+        // then redirecy somewhere
         return $this->redirectToRoute('product_index');
     }
 
